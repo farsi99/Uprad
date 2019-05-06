@@ -100,7 +100,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-bell-o"></i>
-                    <span>Dédicaces</span>
+                    <span>Salon des idées</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                         <small class="label pull-right bg-yellow">12</small>
@@ -110,24 +110,24 @@
                     <li>
                         <a href="pages/UI/general.html">
                             <i class="fa fa-circle-o"></i>
-                            Toutes les dédicaces</a>
+                            toutes les propositions</a>
                     </li>
                     <li>
                         <a href="pages/UI/icons.html">
                             <i class="fa fa-circle-o"></i>
-                            En attente</a>
+                            En attentes</a>
                     </li>
                     <li>
                         <a href="pages/UI/buttons.html">
                             <i class="fa fa-circle-o"></i>
-                            Déjà publié</a>
+                            Retenues</a>
                     </li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-comments"></i>
-                    <span>Commenataires</span>
+                    <i class="fa fa-calendar"></i>
+                    <span>Agenda événements</span>
                     <span class="pull-right-container">
 
                         <i class="fa fa-angle-left pull-right"></i>
@@ -138,17 +138,17 @@
                     <li>
                         <a href="pages/forms/general.html">
                             <i class="fa fa-circle-o"></i>
-                            General Elements</a>
+                            Tous les agendas</a>
                     </li>
                     <li>
                         <a href="pages/forms/advanced.html">
                             <i class="fa fa-circle-o"></i>
-                            Advanced Elements</a>
+                            En attente</a>
                     </li>
                     <li>
                         <a href="pages/forms/editors.html">
                             <i class="fa fa-circle-o"></i>
-                            Editors</a>
+                            Ajouter</a>
                     </li>
                 </ul>
             </li>
@@ -164,13 +164,19 @@
                     <li>
                         <a href="pages/tables/simple.html">
                             <i class="fa fa-circle-o"></i>
-                            Simple tables</a>
+                            Adherants</a>
                     </li>
                     <li>
                         <a href="pages/tables/data.html">
                             <i class="fa fa-circle-o"></i>
-                            Data tables</a>
+                            Equipes</a>
                     </li>
+                    <li>
+                        <a href="pages/tables/data.html">
+                            <i class="fa fa-circle-o"></i>
+                            Administration</a>
+                    </li>
+
                 </ul>
             </li>
         </ul>
