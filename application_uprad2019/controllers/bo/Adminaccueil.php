@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Accueil extends MY_Controller
+class Adminaccueil extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
+        $this->layout->setTheme('backoffice');
     }
 
     /**
@@ -16,11 +17,6 @@ class Accueil extends MY_Controller
      */
     public function index()
     {
-        $this->layout->view('accueil/accueil');
-    }
-
-    public function apropos()
-    {
-        $this->layout->view('accueil/apropos');
+        $this->layout->view('admin/accueil/accueil');
     }
 }

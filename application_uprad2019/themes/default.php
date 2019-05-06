@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <!--[if lt IE 9]>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
                                    <![endif]-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/css/colorbox.css" rel="stylesheet">
-    <link href="assets/css/agenda.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/colorbox.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/agenda.css" rel="stylesheet">
 </head>
 
 <body>

@@ -79,15 +79,15 @@
         </div>
     </div>
 </footer>
-<script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/jquery-migrate.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/flexslider.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/flickity.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/waypoints.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/colorbox.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/jquery.plugin.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery-migrate.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/flexslider.js"></script>
+<script src="assets/js/flickity.js"></script>
+<script src="assets/js/waypoints.js"></script>
+<script src="assets/js/colorbox.js"></script>
+<script src="assets/js/jquery.plugin.js"></script>
+<script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

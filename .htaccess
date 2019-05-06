@@ -1,11 +1,12 @@
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_URI} ^system.*
-RewriteRule ^(.*)$ /index.php?/$1 [L]
-RewriteCond %{REQUEST_URI} ^application.*
-RewriteRule ^(.*)$ /index.php?/$1 [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?/$1 [L]
+Options -Indexes
 
+# Active le module de réécriture d'URL.
+RewriteEngine on
+
+
+#   Toutes les URL qui ne correspondent pas à ces masques sont réécrites.
+RewriteCond $1 !^(index\.php|assets/|migration/|cache/|robots\.txt)
+
+#   Toutes les autres URL vont être redirigées vers le fichier index.php.
+RewriteRule ^(.*)$ index.php/$1 [L]
 
