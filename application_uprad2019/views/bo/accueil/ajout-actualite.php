@@ -106,79 +106,23 @@
                     <div class="box-body">
                         <!-- Minimal style -->
 
-                        <!-- checkbox -->
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" class="minimal" checked>
-                            </label>
-                            <label>
-                                <input type="checkbox" class="minimal">
-                            </label>
-                            <label>
-                                <input type="checkbox" class="minimal" disabled>
-                                Minimal skin checkbox
-                            </label>
+                        <div class="col-xs-12 col-sm-12 no_padding">
+                            <input type="checkbox" name="finaliste" id="choix_doc_site" value="<?php echo 'checked' ? 1 : 0; ?>">
+                            <label for="choix_doc_site">Politique</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 no_padding">
+                            <input type="checkbox" name="jury" id="choix_doc_appli" value="<?php echo 'checked' ? 1 : 0; ?>">
+                            <label for="choix_doc_appli">Economie</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 no_padding">
+                            <input type="checkbox" name="coach" id="choix_doc_tuto" value="<?php echo 'checked' ? 1 : 0; ?>">
+                            <label for="choix_doc_tuto">Sociale</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 no_padding">
+                            <input type="checkbox" name="coach" id="choix_doc_educ" value="<?php echo 'checked' ? 1 : 0; ?>">
+                            <label for="choix_doc_educ">Education</label>
                         </div>
 
-                        <!-- radio -->
-                        <div class="form-group">
-                            <label>
-                                <input type="radio" name="r1" class="minimal" checked>
-                            </label>
-                            <label>
-                                <input type="radio" name="r1" class="minimal">
-                            </label>
-                            <label>
-                                <input type="radio" name="r1" class="minimal" disabled>
-                                Minimal skin radio
-                            </label>
-                        </div>
-
-                        <!-- Minimal red style -->
-
-                        <!-- checkbox -->
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" class="minimal-red" checked>
-                            </label>
-                            <label>
-                                <input type="checkbox" class="minimal-red">
-                            </label>
-                            <label>
-                                <input type="checkbox" class="minimal-red" disabled>
-                                Minimal red skin checkbox
-                            </label>
-                        </div>
-
-                        <!-- radio -->
-                        <div class="form-group">
-                            <label>
-                                <input type="radio" name="r2" class="minimal-red" checked>
-                            </label>
-                            <label>
-                                <input type="radio" name="r2" class="minimal-red">
-                            </label>
-                            <label>
-                                <input type="radio" name="r2" class="minimal-red" disabled>
-                                Minimal red skin radio
-                            </label>
-                        </div>
-
-                        <!-- Minimal red style -->
-
-                        <!-- checkbox -->
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" class="flat-red" checked>
-                            </label>
-                            <label>
-                                <input type="checkbox" class="flat-red">
-                            </label>
-                            <label>
-                                <input type="checkbox" class="flat-red" disabled>
-                                Flat green skin checkbox
-                            </label>
-                        </div>
 
                     </div>
                 </div>
