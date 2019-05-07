@@ -1,5 +1,4 @@
 <header class="main-header">
-
     <!-- Logo -->
     <a class="logo" href="#">
         <!-- mini logo for sidebar mini 50x50 pixels -->
