@@ -37,4 +37,15 @@ class Adminaccueil extends MY_Controller
         }
         $this->layout->view('bo/accueil/actualites', $data);
     }
+
+    /**
+     * cette méthode permet d'ajouter un actualité ou une page
+     *
+     * @return void
+     */
+    public function addActualite()
+    {
+        $data = array();
+        $this->layout->view('bo/accueil/ajout-actualite', $data);
+    }
 }

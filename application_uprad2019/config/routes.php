@@ -54,7 +54,7 @@ $route['default_controller'] = 'accueil';
 //Backoffice du site
 $route['admin-uprad'] = "bo/adminaccueil";
 $route['admin-uprad/actualite'] = 'bo/adminaccueil/getActualite';
-$route['admin-uprad/ajout-actualite'] = 'bo/adminaccueil/ajoutActualite';
+$route['admin-uprad/ajout-actualite'] = 'bo/adminaccueil/addActualite';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
