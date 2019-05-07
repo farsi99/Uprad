@@ -206,6 +206,7 @@
                     </textarea>
                         </form>
                     </div>
+                    <input type="submit" value="Enregistrer ton article" class="btn btn-info" style="padding:10px; margin-left:10px;margin-bottom:5px;">
                 </div>
                 <!-- /.box -->
 
