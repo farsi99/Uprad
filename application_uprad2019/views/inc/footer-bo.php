@@ -235,3 +235,6 @@
 <script src="<?php echo base_url(); ?>assets/admin/ckeditor/ckeditor.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin/js/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin/js/scriptCKeditor.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/scriptData.js"></script>

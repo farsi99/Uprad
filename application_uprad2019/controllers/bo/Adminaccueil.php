@@ -8,6 +8,7 @@ class Adminaccueil extends MY_Controller
     {
         parent::__construct();
         $this->layout->setTheme('backoffice');
+        $this->load->model('Article_model');
     }
 
     /**
@@ -17,6 +18,23 @@ class Adminaccueil extends MY_Controller
      */
     public function index()
     {
-        $this->layout->view('admin/accueil/accueil');
+        $this->layout->view('bo/accueil/accueil');
+    }
+
+    /**
+     * cette méthode traite l'affichage des actulités dans son ensemble ou par catégorie
+     * @param integer $_idstation, cette parametre peut etre null
+     * @return array|boolean
+     * 
+     */
+
+    public function getActualite($_idstation = null)
+    {
+        if (is_numeric($_idstation) && !empty($_idstation)) {
+            $data['actualites'] = $this->Article_model->Touslesactualites($_idstation);
+        } else {
+            $data['actualites'] = $this->Article_model->Touslesactualites();
+        }
+        $this->layout->view('bo/accueil/actualites', $data);
     }
 }

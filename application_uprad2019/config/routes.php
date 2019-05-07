@@ -50,6 +50,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'accueil';
+
+//Backoffice du site
 $route['admin-uprad'] = "bo/adminaccueil";
+$route['admin-uprad/actualite'] = 'bo/adminaccueil/getActualite';
+$route['admin-uprad/ajout-actualite'] = 'bo/adminaccueil/ajoutActualite';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
