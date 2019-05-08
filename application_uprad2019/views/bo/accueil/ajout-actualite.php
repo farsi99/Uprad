@@ -78,7 +78,7 @@
             <!-- /.col (right) -->
             <div class="col-md-4">
 
-                <!-- /.box -->
+                <!-- /bloc chargment d'image -->
                 <div class="box box-danger">
                     <div class="box-header">
                         <h3 class="box-title">Charger une image</h3>
@@ -89,7 +89,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-photo"></i>
                                 </div>
-                                <input type="file" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                <input type="file" class="form-control" data-mask>
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -98,7 +98,7 @@
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-                <!-- iCheck -->
+                <!-- categorie -->
                 <div class="box box-success">
                     <div class="box-header">
                         <h3 class="box-title">Catégorie</h3>
@@ -112,17 +112,36 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 no_padding">
                             <input type="checkbox" name="jury" id="choix_doc_appli" value="<?php echo 'checked' ? 1 : 0; ?>">
-                            <label for="choix_doc_appli">Economie</label>
+                            <label for="choix_doc_appli">Economie & sociale</label>
                         </div>
                         <div class="col-xs-12 col-sm-12 no_padding">
                             <input type="checkbox" name="coach" id="choix_doc_tuto" value="<?php echo 'checked' ? 1 : 0; ?>">
-                            <label for="choix_doc_tuto">Sociale</label>
+                            <label for="choix_doc_tuto">Education & Santé </label>
                         </div>
                         <div class="col-xs-12 col-sm-12 no_padding">
                             <input type="checkbox" name="coach" id="choix_doc_educ" value="<?php echo 'checked' ? 1 : 0; ?>">
-                            <label for="choix_doc_educ">Education</label>
+                            <label for="choix_doc_educ">Jeunesse & Sport</label>
                         </div>
 
+
+                    </div>
+                </div>
+                <!-- format -->
+                <div class="box box-default">
+                    <div class="box-header">
+                        <h3 class="box-title">Format article</h3>
+                    </div>
+                    <div class="box-body">
+                        <!-- Minimal style -->
+
+                        <div class="col-xs-12 col-sm-12 no_padding">
+                            <select name="format" id="" class="form-control">
+                                <option value="actualite">Actualité</option>
+                                <option value="video">Vidéo</option>
+                                <option value="infographie">Infographie</option>
+                                <option value="audio">Audio</option>
+                            </select>
+                        </div>
 
                     </div>
                 </div>
@@ -150,7 +169,20 @@
                     </textarea>
                         </form>
                     </div>
-                    <input type="submit" value="Enregistrer ton article" class="btn btn-info" style="padding:10px; margin-left:10px;margin-bottom:5px;">
+
+
+
+                    <div class="box-body">
+                        <div class="col-xs-12 col-sm-6 no_padding">
+                            <input type="checkbox" name="coach" id="choix_doc_educ" value="<?php echo 'checked' ? 1 : 0; ?>">
+                            <label for="choix_doc_educ" style="margin-top: 7px;position: absolute;margin-left: 12px;color: red;">Publié l'article</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 no_padding">
+                            <input type="submit" value="Enregistrer ton article" class="btn btn-info" style="padding:10px; margin-left:10px;margin-bottom:5px;">
+                        </div>
+
+                    </div>
+
                 </div>
                 <!-- /.box -->
 
