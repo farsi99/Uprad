@@ -5,7 +5,11 @@
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
-
+                <?php if ($this->session->flashdata('success')) { ?>
+                    <div class="callout callout-success">
+                        <p><?php echo $this->session->flashdata('success'); ?></p>
+                    </div>
+                <?php } ?>
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Actualites</h3>
