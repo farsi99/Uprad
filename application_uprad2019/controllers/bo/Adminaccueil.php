@@ -12,6 +12,9 @@ class Adminaccueil extends MY_Controller
         $this->layout->setTheme('backoffice');
         $this->load->model('General_model');
         $this->load->library('slug');
+        if ($this->session->userdata['logged_in'] != 1) {
+            redirect('compte');
+        }
     }
 
     /**

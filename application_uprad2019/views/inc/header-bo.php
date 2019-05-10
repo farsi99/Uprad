@@ -239,19 +239,17 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <img alt="User Image" class="user-image" src="<?php echo base_url(); ?>assets/admin/img/user2-160x160.jpg">
-                        <span class="hidden-xs">Farouk
-                            Soulé</span>
+                        <img alt="User Image" class="user-image" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
+                        <span class="hidden-xs"><?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['prenom'] : ''; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/user2-160x160.jpg">
+                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
 
                             <p>
-                                Farouk
-                                Soulé Ibrahim
-                                <small>Member since Nov. 2012</small>
+                                <?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['prenom'] : ''; ?>
+                                <small>Membre depuis Nov. 2012</small>
                             </p>
                         </li>
                         <!-- Menu Body -->

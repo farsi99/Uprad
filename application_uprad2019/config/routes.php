@@ -68,5 +68,6 @@ $route['admin-uprad/update-page/(:any)'] = 'bo/adminaccueil/updateArticle/$1';
 $route['admin-uprad/delete-actualite/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
 $route['admin-uprad/delete-page/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
 
+//deconnextion
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

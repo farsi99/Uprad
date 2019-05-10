@@ -346,3 +346,29 @@ ERROR - 2019-05-10 16:47:40 --> Query error: Champ 'a.id_membre' inconnu dans on
                     GROUP BY a.id
 ERROR - 2019-05-10 16:49:15 --> 404 Page Not Found: Dist/img
 ERROR - 2019-05-10 16:49:15 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:16 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:16 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:17 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:40 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:40 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:36:40 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:41:23 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:41:23 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:42:09 --> Severity: Notice --> Undefined index: logged_in C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 15
+ERROR - 2019-05-10 17:42:14 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:42:14 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:42:27 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:42:27 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:45:02 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:45:02 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:45:21 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:45:21 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:45:57 --> Severity: Notice --> Undefined index: logged_in C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 15
+ERROR - 2019-05-10 17:49:09 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:49:09 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:53:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:53:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 17:54:48 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:54:48 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:55:26 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:55:26 --> 404 Page Not Found: Dist/img

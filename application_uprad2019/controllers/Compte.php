@@ -37,4 +37,10 @@ class Compte extends MY_Controller
 
         $this->load->view('compte/index');
     }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('compte');
+    }
 }
