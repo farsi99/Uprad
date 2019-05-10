@@ -87,3 +87,6 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 
 //Message pour l'ensemble du site
 define('ENREGISTREMENT', 'Enregistrement effectué avec succès !');
+define('ERRORENREGISTREMENT', 'Une erreur s\'est produite, veuillez réessayez');
+define('MODIFICATION', 'Modification effectuée avec succès !');
+define('SUPPRESSION', 'Suppression effectuée avec succès !');

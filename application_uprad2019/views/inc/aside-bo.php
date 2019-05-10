@@ -55,12 +55,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#">
+                        <a href="<?php echo site_url('admin-uprad/actualite'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Tous les articles</a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo site_url('admin-uprad/ajout-actualite'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Ajouter</a>
                     </li>
@@ -86,12 +86,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#">
+                        <a href="<?php echo site_url('admin-uprad/page'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Toutes les pages</a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo site_url('admin-uprad/ajout-page'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Ajouter</a>
                     </li>

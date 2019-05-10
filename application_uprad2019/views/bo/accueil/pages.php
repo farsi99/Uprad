@@ -12,8 +12,8 @@
                 <?php } ?>
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Actualites</h3>
-                        <a class="btn btn-info" href="<?php site_url('admin-uprad/ajout-actualite'); ?>" style="float:right;">Ajouter un article</a>
+                        <h3 class="box-title">Pages</h3>
+                        <a class="btn btn-info" href="<?php site_url('admin-uprad/ajout-actualite'); ?>" style="float:right;">Ajouter une page</a>
                     </div>
                     <hr>
                     <!-- /.box-header -->
@@ -28,7 +28,6 @@
                                                 <th aria-controls="example1" aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1" rowspan="1" style="width: 300.617px;" tabindex="0">Titre</th>
                                                 <th aria-controls="example1" aria-label="Platform(s): activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 107.083px;" tabindex="0">Auteur</th>
                                                 <th aria-controls="example1" aria-label="Engine version: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 126.333px;" tabindex="0">date publication</th>
-                                                <th aria-controls="example1" aria-label="CSS grade: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 93.683px;" tabindex="0">Etat</th>
                                                 <th aria-controls="example1" aria-label="CSS grade: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 103.683px;" tabindex="0">Actions</th>
 
                                             </tr>
@@ -40,19 +39,17 @@
                                                         <td class="sorting_1"><?php echo $actu->titre; ?></td>
                                                         <td><?php echo $actu->auteur; ?></td>
                                                         <td><?php echo strftime('%d/%m/%Y à %Hh%M', strtotime($actu->date_creation));  ?></td>
+
                                                         <td>
-                                                            <?php if ($actu->status == 1) { ?>
-                                                                <span class="label label-success">Publié</span>
-                                                            <?php } else { ?>
-                                                                <span class="label label-warning">En attente</span>
-                                                            <?php } ?>
-                                                        </td>
-                                                        <td>
-                                                            <a class="btn btn-info btn-sm" href="<?php echo site_url('admin-uprad/update-actualite/' . $actu->id); ?>" type="button">
-                                                                Modif <i class="fa fa-edit" title="Modifier"></i>
+
+                                                            <a class="btn btn-default btn-sm" href="{{ path('admin_actualite_show', {'id': actualite.id}) }}" type="button">
+                                                                <i class="fa fa-eye" title="Voir"></i>
                                                             </a>
-                                                            <a class="btn btn-danger btn-sm" href="<?php echo site_url('admin-uprad/delete-actualite/' . $actu->id); ?>" type="button">
-                                                                Supp <i class="fa fa-trash-o" title="Supprimer"></i>
+                                                            <a class="btn btn-default btn-sm" href="{{ path('admin_actualite_edit', {'id': actualite.id}) }}" type="button">
+                                                                <i class="fa fa-edit" title="Modifier"></i>
+                                                            </a>
+                                                            <a class="btn btn-default btn-sm" href="" type="button">
+                                                                <i class="fa fa-trash-o" title="Supprimer"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -69,7 +66,7 @@
                                                 <th colspan="1" rowspan="1">Titre</th>
                                                 <th colspan="1" rowspan="1">Auteur</th>
                                                 <th colspan="1" rowspan="1">Date publication</th>
-                                                <th colspan="1" rowspan="1">Etat</th>
+
                                                 <th colspan="1" rowspan="1">Action</th>
                                             </tr>
                                         </tfoot>

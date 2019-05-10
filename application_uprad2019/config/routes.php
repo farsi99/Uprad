@@ -54,7 +54,17 @@ $route['default_controller'] = 'accueil';
 //Backoffice du site
 $route['admin-uprad'] = "bo/adminaccueil";
 $route['admin-uprad/actualite'] = 'bo/adminaccueil/getActualite';
+$route['admin-uprad/page'] = 'bo/adminaccueil/getPage';
 $route['admin-uprad/ajout-actualite'] = 'bo/adminaccueil/addActualite';
+$route['admin-uprad/ajout-page'] = 'bo/adminaccueil/addActualite';
+$route['admin-uprad/update-page'] = 'bo/adminaccueil/updateActualite';
+//route pour les modifications des actulaités et pages
+$route['admin-uprad/update-actualite'] = 'bo/adminaccueil/updateArticle';
+$route['admin-uprad/update-actualite/(:any)'] = 'bo/adminaccueil/updateArticle/$1';
+
+//suppression des données
+$route['admin-uprad/delete-actualite/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
