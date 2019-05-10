@@ -165,4 +165,45 @@ class General_model extends MY_Model
             }
         }
     }
+
+    /**
+     * Cette méthode traite l'authentifiaction des abonnées avec son email et son mot de passe passés en paramere et met toutes ses infos en sessions ()
+     * @param string $_username identifiant ou email de l'utilisateur
+     * @param string $_password password de l'utilisateur
+     * @return bool true si c'est bon ou false si erreur
+     */
+    public function authentification($_username, $_password)
+    {
+        if (empty($_username) || empty($_password)) {
+            return false;
+        } else {
+            $query = "SELECT a.*,m.nom,m.prenom,m.photo FROM admin a 
+					JOIN membre m ON m.id = a.membre_id                                 
+					WHERE a.email =?
+                    GROUP BY a.id";
+            $result = $this->db->query($query, array($_username));
+            if ($result->num_rows() > 0) {
+                $donnes = $result->result();
+                foreach ($donnes as $user) {
+                    if ($user->password === sha1($_password)) {
+                        //on ajout les données en session
+                        $session_data = array(
+                            'username' => $user->id,
+                            'logged_in' => true,
+                            'nom' => $user->nom,
+                            'prenom' => $user->prenom,
+                            'email' => $user->email,
+                            'photo' => $user->photo
+                        );
+                        $this->session->set_userdata($session_data);
+                        return $session_data;
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
+                return false;
+            }
+        }
+    }
 }

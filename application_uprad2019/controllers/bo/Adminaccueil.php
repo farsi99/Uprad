@@ -21,7 +21,8 @@ class Adminaccueil extends MY_Controller
      */
     public function index()
     {
-        $this->layout->view('bo/accueil/accueil');
+        $data['title'] = "Tableau de bord";
+        $this->layout->view('bo/accueil/accueil', $data);
     }
 
     /**

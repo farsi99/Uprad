@@ -13,7 +13,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Actualites</h3>
-                        <a class="btn btn-info" href="<?php site_url('admin-uprad/ajout-actualite'); ?>" style="float:right;">Ajouter un article</a>
+                        <a href="<?php echo site_url('admin-uprad/ajout-actualite'); ?>" class="btn btn-info" style="float:right;">Ajouter un article</a>
                     </div>
                     <hr>
                     <!-- /.box-header -->

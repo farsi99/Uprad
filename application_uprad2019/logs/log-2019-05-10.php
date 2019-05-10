@@ -301,3 +301,48 @@ ERROR - 2019-05-10 14:30:02 --> 404 Page Not Found: Admin-uprad/update-actualite
 ERROR - 2019-05-10 14:30:02 --> 404 Page Not Found: Admin-uprad/update-actualite
 ERROR - 2019-05-10 14:30:08 --> 404 Page Not Found: Admin-uprad/update-actualite
 ERROR - 2019-05-10 14:30:08 --> 404 Page Not Found: Admin-uprad/update-actualite
+ERROR - 2019-05-10 14:32:33 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:32:33 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:52 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:52 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:54 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:54 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:56 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:33:56 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:34:38 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:34:38 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:34:40 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:34:40 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:35:26 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 14:35:27 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:35:27 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:36:04 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 14:36:04 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:36:05 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:36:20 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:36:20 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 14:36:28 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:36:28 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:23 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:23 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:24 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:24 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:29 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:29 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:30 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:37:30 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 15:22:59 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 15:22:59 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 16:42:17 --> Severity: error --> Exception: Call to undefined method CI_Session::set_flash() C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 22
+ERROR - 2019-05-10 16:43:44 --> Severity: Notice --> Undefined property: Compte::$General_model C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:43:44 --> Severity: error --> Exception: Call to a member function authentification() on null C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:44:57 --> Severity: Notice --> Undefined property: Compte::$General_model C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:44:57 --> Severity: error --> Exception: Call to a member function authentification() on null C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:46:32 --> Severity: Notice --> Undefined property: Compte::$General_model C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:46:32 --> Severity: error --> Exception: Call to a member function authentification() on null C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 26
+ERROR - 2019-05-10 16:47:40 --> Query error: Champ 'a.id_membre' inconnu dans on clause - Invalid query: SELECT a.*,m.nom,m.prenom,m.photo FROM admin a 
+					JOIN membre m ON m.id = a.id_membre                                 
+					WHERE a.email ='admin@gmail.com'
+                    GROUP BY a.id
+ERROR - 2019-05-10 16:49:15 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 16:49:15 --> 404 Page Not Found: Dist/img

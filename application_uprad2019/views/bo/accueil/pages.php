@@ -13,7 +13,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Pages</h3>
-                        <a class="btn btn-info" href="<?php site_url('admin-uprad/ajout-actualite'); ?>" style="float:right;">Ajouter une page</a>
+                        <a class="btn btn-info" href="<?php echo site_url('admin-uprad/ajout-page'); ?>" style="float:right;">Ajouter une page</a>
                     </div>
                     <hr>
                     <!-- /.box-header -->
