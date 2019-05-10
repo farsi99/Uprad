@@ -5,14 +5,16 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <?php if ($this->session->flashdata('error')) { ?>
-                    <div class="callout callout-danger">
-                        <p><?php echo $this->session->flashdata('error'); ?></p>
+                <?php if ($this->session->flashdata('success')) { ?>
+                    <div class="callout callout-success">
+                        <p><?php echo $this->session->flashdata('success'); ?></p>
                     </div>
                 <?php   } ?>
             </div>
-            <form method="POST" action="<?php echo site_url('admin-uprad/ajout-page'); ?>" enctype="multipart/form-data">
+            <form method="POST" <?php if (empty($editer)) { ?> action="<?php echo site_url('admin-uprad/ajout-page'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/update-page'); ?>" <?php } ?> enctype="multipart/form-data">
                 <input type="hidden" name="id_type" value="2">
+                <input type="hidden" name="id" value="<?php echo !empty($editer->id) ? $editer->id : ''; ?>">
+
                 <!-- /.col (left) -->
                 <div class="col-md-8">
                     <div class="box box-primary">
@@ -51,19 +53,19 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-internet-explorer"></i>
                                     </div>
-                                    <input type="text" name="meta-description" class="form-control pull-right" placeholder="meta description pour le referencement(SEO)">
+                                    <input type="text" name="meta-description" class="form-control pull-right" placeholder="meta description pour le referencement(SEO)" value="<?php echo !empty($editer->meta_description) ? $editer->meta_description : ''; ?>">
                                 </div>
                                 <!-- /.input group -->
                             </div>
                             <!-- /.form group -->
                             <!-- Date and time range -->
-                            <div class="form-group">
+                            <div class="form-group" <?php echo !empty($editer) ? "hidden" : ""; ?>>
                                 <label>Date de publication</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-clock-o"></i>
                                     </div>
-                                    <input type="date" name="date-publication" class="form-control pull-right" id="reservationtime">
+                                    <input type="date" name="date-publication" class="form-control pull-right" value="<?php echo !empty($editer->date_creation) ? $editer->date_creation : ''; ?>">
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -116,7 +118,7 @@
                         <!-- /.box-header -->
                         <div class="box-body pad">
                             <textarea id="editor1" name="contenu" rows="10" cols="80" placeholder="Ici placé votre contenue">
-
+                            <?php echo !empty($editer->content) ? $editer->content : ''; ?>
                     </textarea>
                             <?php if (form_error('contenu')) { ?>
                                 <div class="alert alert-danger small">
@@ -130,7 +132,7 @@
                         <div class="box-body">
                             <input type="hidden" name="verif" value="">
                             <div class="col-xs-12 col-sm-12 no_padding">
-                                <input type="submit" value="Enregistrer ton article" class="btn btn-info" style="padding:10px; margin-bottom:5px;">
+                                <input type="submit" value="<?php echo empty($editer) ? "Enregistrer ta page" : "Modifier ta page"; ?>" class="btn btn-info" style="padding:10px; margin-bottom:5px;">
                             </div>
                         </div>
 

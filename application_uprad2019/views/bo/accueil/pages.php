@@ -42,14 +42,11 @@
 
                                                         <td>
 
-                                                            <a class="btn btn-default btn-sm" href="{{ path('admin_actualite_show', {'id': actualite.id}) }}" type="button">
-                                                                <i class="fa fa-eye" title="Voir"></i>
+                                                            <a class="btn btn-info btn-sm" href="<?php echo site_url('admin-uprad/update-page/' . $actu->id); ?>" type="button">
+                                                                Modif <i class="fa fa-edit" title="Modifier"></i>
                                                             </a>
-                                                            <a class="btn btn-default btn-sm" href="{{ path('admin_actualite_edit', {'id': actualite.id}) }}" type="button">
-                                                                <i class="fa fa-edit" title="Modifier"></i>
-                                                            </a>
-                                                            <a class="btn btn-default btn-sm" href="" type="button">
-                                                                <i class="fa fa-trash-o" title="Supprimer"></i>
+                                                            <a class="btn btn-danger btn-sm" href="<?php echo site_url('admin-uprad/delete-page/' . $actu->id); ?>" type="button">
+                                                                Supp <i class="fa fa-trash-o" title="Supprimer"></i>
                                                             </a>
                                                         </td>
                                                     </tr>

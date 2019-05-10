@@ -74,7 +74,7 @@
                             <!-- /.form group -->
 
                             <!-- Date and time range -->
-                            <div class="form-group">
+                            <div class="form-group" <?php echo !empty($editer) ? "hidden" : ""; ?>>
                                 <label>Date de publication</label>
                                 <?php echo !empty($editer->date_creation) ? $editer->date_creation : ''; ?>
                                 <div class="input-group">
@@ -124,10 +124,17 @@
                         <div class="box-body">
                             <!-- Minimal style -->
                             <?php
-                            if (!empty($stations)) {
-                                foreach ($stations as $key => $station) { ?>
+                            //on verifie s'il y a des station pre-cocher
+                            if (!empty($editerStation)) {
+                                foreach ($editerStation as $val) {
+                                    $idStations[] = $val->id; ?>
+                                    <input type="hidden" name="idStations[]" value="<?php echo $val->id; ?>">
+                                <?php  }
+                        }
+                        if (!empty($stations)) {
+                            foreach ($stations as $key => $station) { ?>
                                     <div class="col-xs-12 col-sm-12 no_padding">
-                                        <input type="checkbox" name="stations[]" id="<?php echo $station->libelle; ?>" value="<?php echo 'checked' ? $station->id : 0; ?>">
+                                        <input type="checkbox" name="stations[]" id="<?php echo $station->libelle; ?>" <?php echo !empty($idStations) && in_array($station->id, $idStations) ? "checked" : ""; ?> value="<?php echo 'checked' ? $station->id : 0; ?>">
                                         <label for="<?php echo $station->libelle; ?>"><?php echo $station->libelle; ?></label>
                                     </div>
                                 <?php  }

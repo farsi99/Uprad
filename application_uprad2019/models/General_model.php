@@ -42,7 +42,7 @@ class General_model extends MY_Model
      * @param string $_table
      * @return array|bool
      */
-    public function AfficherUnArticle($_id, $_table)
+    public function AfficherUneDonnes($_id, $_table)
     {
         if (!empty($_id) && is_numeric($_id) && !empty($_table)) {
             $req = "SELECT * FROM $_table WHERE id=$_id";
@@ -56,13 +56,12 @@ class General_model extends MY_Model
     }
 
     /**
-     * cette méthode retourne l'ensemble des stations
-     *
+     * cette méthode retourne l'ensemble des stations ou les station selon un article
      * @return array|bool
      */
     public function Touslesstations()
     {
-        $req = "SELECT * FROM station";
+        $req = "SELECT * FROM station ";
         $result = $this->db->query($req)->result();
         if (!empty($result)) {
             return $result;
@@ -90,8 +89,6 @@ class General_model extends MY_Model
         }
     }
 
-
-
     /**
      * cette méthode traite la modification des données de l'espaceaef, trombi ou infographie
      * @param int $_id identifiant du document
@@ -104,8 +101,28 @@ class General_model extends MY_Model
         if (isset($_id) && is_numeric($_id) && is_array($_data) && !empty($_table)) {
             $this->db->where('id', $_id);
             $result = $this->db->update($_table, $_data);
-            log_message('Error', 'Req: ' . $this->db->last_query());
             return $result;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Suppression des données de la base
+     * @param integer $_id identifiant 
+     * @param integer $_idtype //en cas d'article, ça distingue quelle type d'article ou null si c'est pas un article
+     * @return bool
+     */
+    public function SupprimerLesDonnes($_id, $_table, $_idtype = null)
+    {
+        $where = "";
+        if (isset($_id) && is_numeric($_id) && !empty($_table)) {
+            if (!empty($_idtype) && $_table == "article") {
+                $where .= "AND article_type_id=$_idtype";
+            }
+            $query = "DELETE FROM $_table WHERE id=$_id $where";
+            $this->db->query($query);
+            return true;
         } else {
             return false;
         }
@@ -113,18 +130,39 @@ class General_model extends MY_Model
 
 
     /**
-     * Suppression des données de la base
-     * @param int $_id identifiant 
-     * @return bool
+     * cette méthode retourne l'ensemble des stations ou les station selon un article
+     *@param int $_idarticle //qui peut etre null
+     * @return array|bool
      */
-    public function SupprimerLesDonnes($_id, $_table)
+    public function StationsLies($_idarticle = null)
     {
-        if (isset($_id) && is_numeric($_id) && !empty($_table)) {
-            $query = "DELETE FROM $_table WHERE id=$_id";
-            $this->db->query($query);
-            return true;
+        $where = "";
+        if (!empty($_idarticle) && is_numeric($_idarticle)) {
+            $where .= " WHERE ass.id_article = $_idarticle";
+        }
+        $req = "SELECT s.id,s.libelle FROM station s
+        INNER JOIN `ass-station-article` ass  ON ass.id_station = s.id 
+        $where";
+        $result = $this->db->query($req)->result();
+        if (!empty($result)) {
+            return $result;
         } else {
-            return false;
+            return null;
+        }
+    }
+
+    /**
+     * cette méthode est une exception permetant de supprimer les station
+     * @param array $_idstations
+     * */
+    public function EnleverDesStation($_idstations)
+    {
+        if (is_array($_idstations) && !empty($_idstations)) {
+            foreach ($_idstations as $_idstation) {
+                $req = "DELETE FROM `ass-station-article` WHERE id_station=$_idstation ";
+                $this->db->query($req);
+                log_message('Error', 'Supprimer:' . $this->db->last_query());
+            }
         }
     }
 }
