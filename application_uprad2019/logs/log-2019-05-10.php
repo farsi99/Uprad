@@ -277,3 +277,27 @@ ERROR - 2019-05-10 12:59:20 --> 404 Page Not Found: Admin-uprad/dist
 ERROR - 2019-05-10 12:59:20 --> 404 Page Not Found: Admin-uprad/dist
 ERROR - 2019-05-10 12:59:24 --> 404 Page Not Found: Admin-uprad/dist
 ERROR - 2019-05-10 12:59:24 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 13:09:10 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 13:09:10 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:22:01 --> 404 Page Not Found: Admin-uprad/update-page
+ERROR - 2019-05-10 14:22:01 --> 404 Page Not Found: Admin-uprad/update-page
+ERROR - 2019-05-10 14:22:11 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:22:11 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:23:30 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:23:30 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:24:04 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:24:04 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:24:34 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:24:34 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 197
+ERROR - 2019-05-10 14:26:31 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 196
+ERROR - 2019-05-10 14:26:31 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 196
+ERROR - 2019-05-10 14:27:47 --> Severity: Notice --> Undefined property: Adminaccueil::$Slug C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 196
+ERROR - 2019-05-10 14:27:47 --> Severity: error --> Exception: Call to a member function slugify() on null C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 196
+ERROR - 2019-05-10 14:28:06 --> 404 Page Not Found: Admin-uprad/update-page
+ERROR - 2019-05-10 14:28:06 --> 404 Page Not Found: Admin-uprad/update-page
+ERROR - 2019-05-10 14:29:58 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:29:58 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 14:30:02 --> 404 Page Not Found: Admin-uprad/update-actualite
+ERROR - 2019-05-10 14:30:02 --> 404 Page Not Found: Admin-uprad/update-actualite
+ERROR - 2019-05-10 14:30:08 --> 404 Page Not Found: Admin-uprad/update-actualite
+ERROR - 2019-05-10 14:30:08 --> 404 Page Not Found: Admin-uprad/update-actualite

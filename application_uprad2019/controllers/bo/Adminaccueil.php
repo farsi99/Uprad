@@ -11,6 +11,7 @@ class Adminaccueil extends MY_Controller
         parent::__construct();
         $this->layout->setTheme('backoffice');
         $this->load->model('General_model');
+        $this->load->library('slug');
     }
 
     /**
@@ -88,6 +89,7 @@ class Adminaccueil extends MY_Controller
                 if ($this->input->post('id_type') == 1) { //Quand il s'agit d'un article
                     $dataInsert = array(
                         'titre' => $this->input->post('titre'),
+                        'libelle_url' => $this->slug->slugify($this->input->post('titre')),
                         'meta_title' => $this->input->post('meta-title'),
                         'meta_description' => $this->input->post('meta-description'),
                         'thumbnail' => $filename,
@@ -102,6 +104,7 @@ class Adminaccueil extends MY_Controller
                 } elseif ($this->input->post('id_type') == 2) { //Quand il s'agit d'une page
                     $dataInsert = array(
                         'titre' => $this->input->post('titre'),
+                        'libelle_url' => $this->slug->slugify($this->input->post('titre')),
                         'meta_title' => $this->input->post('meta-title'),
                         'meta_description' => $this->input->post('meta-description'),
                         'thumbnail' => $filename,
@@ -177,6 +180,7 @@ class Adminaccueil extends MY_Controller
                 if ($this->input->post('id_type') == 1) { //Quand il s'agit d'un article
                     $dataUpdate = array(
                         'titre' => $this->input->post('titre'),
+                        'libelle_url' => $this->slug->slugify($this->input->post('titre')),
                         'meta_title' => $this->input->post('meta-title'),
                         'meta_description' => $this->input->post('meta-description'),
                         'resume' => $this->input->post('resume'),
@@ -190,6 +194,7 @@ class Adminaccueil extends MY_Controller
                 } elseif ($this->input->post('id_type') == 2) { //Quand il s'agit d'une page
                     $dataUpdate = array(
                         'titre' => $this->input->post('titre'),
+                        'libelle_url' => $this->slug->slugify($this->input->post('titre')),
                         'meta_title' => $this->input->post('meta-title'),
                         'meta_description' => $this->input->post('meta-description'),
                         'resume' => $this->input->post('resume'),
