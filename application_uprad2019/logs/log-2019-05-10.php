@@ -372,3 +372,116 @@ ERROR - 2019-05-10 17:54:48 --> 404 Page Not Found: Dist/img
 ERROR - 2019-05-10 17:54:48 --> 404 Page Not Found: Dist/img
 ERROR - 2019-05-10 17:55:26 --> 404 Page Not Found: Dist/img
 ERROR - 2019-05-10 17:55:26 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:57:40 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 17:57:40 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery2t.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery4t.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery3t.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/team1.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery6t.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/team2.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery1t.jpg
+ERROR - 2019-05-10 18:53:42 --> 404 Page Not Found: Images/gallery5t.jpg
+ERROR - 2019-05-10 18:53:55 --> 404 Page Not Found: Connexion/index
+ERROR - 2019-05-10 18:54:03 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 18:54:03 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 18:54:14 --> 404 Page Not Found: bo/Compte/getAdherant
+ERROR - 2019-05-10 18:55:14 --> 404 Page Not Found: bo/Compte/getAdherant
+ERROR - 2019-05-10 18:57:30 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 18:57:30 --> 404 Page Not Found: Admin-uprad/assets
+ERROR - 2019-05-10 18:58:27 --> Severity: error --> Exception: Call to undefined method Compte::setTheme() C:\wamp64\www\algerie\application_uprad2019\controllers\Compte.php 55
+ERROR - 2019-05-10 18:58:55 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 18:58:55 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 18:58:55 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 18:59:53 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 18:59:53 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 18:59:53 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:00:10 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:00:10 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:04:31 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:04:31 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:05:14 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:05:14 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:05:59 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 19:05:59 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:52:35 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:52:35 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:53:58 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:53:58 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:55:03 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:55:03 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:56:53 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 21:56:53 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:06:13 --> Severity: Notice --> Undefined property: stdClass::$Civilite C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 42
+ERROR - 2019-05-10 22:06:13 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 48
+ERROR - 2019-05-10 22:06:13 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 48
+ERROR - 2019-05-10 22:06:13 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 51
+ERROR - 2019-05-10 22:06:13 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 51
+ERROR - 2019-05-10 22:06:13 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:06:13 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:07:15 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 48
+ERROR - 2019-05-10 22:07:15 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 48
+ERROR - 2019-05-10 22:07:15 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 51
+ERROR - 2019-05-10 22:07:15 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 51
+ERROR - 2019-05-10 22:07:15 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:07:16 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:08:38 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 49
+ERROR - 2019-05-10 22:08:38 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 49
+ERROR - 2019-05-10 22:08:38 --> Severity: Notice --> Undefined variable: actu C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 52
+ERROR - 2019-05-10 22:08:38 --> Severity: Notice --> Trying to get property 'id' of non-object C:\wamp64\www\algerie\application_uprad2019\views\compte\adherant.php 52
+ERROR - 2019-05-10 22:08:38 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:08:38 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:09:06 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:09:06 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:12:06 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:12:06 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:12:56 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:12:56 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:13:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:13:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:14:33 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:14:33 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:14:41 --> Severity: Notice --> Undefined index: logged_in C:\wamp64\www\algerie\application_uprad2019\controllers\bo\Adminaccueil.php 15
+ERROR - 2019-05-10 22:14:44 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 22:14:44 --> 404 Page Not Found: Dist/img
+ERROR - 2019-05-10 22:14:51 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:14:51 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:22:49 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:22:49 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:23:23 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:23:23 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:24:00 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:24:00 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:24:18 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:24:18 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:25:00 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:25:00 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:25:12 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:25:12 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:28:04 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:28:04 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:33:19 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:33:19 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:34:28 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:34:28 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:36:03 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:36:03 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:38:46 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:38:46 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:39:18 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:39:18 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:39:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:39:36 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:40:27 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:40:27 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:41:24 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:41:24 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:45:24 --> 404 Page Not Found: Admin-uprad/ajout-adherant
+ERROR - 2019-05-10 22:49:22 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 22:49:22 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:49:22 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:52:09 --> Severity: Notice --> Undefined variable: title C:\wamp64\www\algerie\application_uprad2019\views\inc\entete-admin.php 9
+ERROR - 2019-05-10 22:52:09 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:52:09 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:52:23 --> 404 Page Not Found: Admin-uprad/dist
+ERROR - 2019-05-10 22:52:23 --> 404 Page Not Found: Admin-uprad/dist

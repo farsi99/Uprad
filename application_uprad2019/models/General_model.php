@@ -35,6 +35,25 @@ class General_model extends MY_Model
         }
     }
 
+    /**
+     * cette méthode retourne un ensemble des données 
+     * @param string $_table
+     * @return array|bool
+     */
+    public function AfficherDesDonnes($_table)
+    {
+        if (!empty($_table)) {
+            $req = "SELECT * FROM $_table ORDER BY id";
+            $result = $this->db->query($req)->result();
+            if (!empty($result)) {
+                return $result;
+            } else {
+                return null;
+            }
+        } else {
+            return false;
+        }
+    }
 
     /**
      * cette méthode retourne une valeur unique d'une données

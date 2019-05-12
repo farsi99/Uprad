@@ -178,14 +178,14 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
-                    <span>Utilisateurs</span>
+                    <span>Membres</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="pages/tables/simple.html">
+                        <a href="<?php echo site_url('admin-uprad/adherant'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Adherants</a>
                     </li>

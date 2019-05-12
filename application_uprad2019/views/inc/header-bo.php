@@ -240,13 +240,12 @@
                 <li class="dropdown user user-menu">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <img alt="User Image" class="user-image" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
-                        <span class="hidden-xs"><?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['prenom'] : ''; ?></span>
+                        <span class="hidden-xs"><?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['nom'] : ''; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
-
                             <p>
                                 <?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['prenom'] : ''; ?>
                                 <small>Membre depuis Nov. 2012</small>

@@ -40,7 +40,7 @@
                                 <label>META title:</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
-                                        <i class="fa fa-internet-explorer"></i>
+                                        <i class="fa fa-google"></i>
                                     </div>
                                     <input type="text" name="meta-title" class="form-control pull-right" placeholder="titre pour le referencement(SEO)" value="<?php echo !empty($editer->meta_title) ? $editer->meta_title : ''; ?>">
                                 </div>
@@ -51,7 +51,7 @@
                                 <label>META description:</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
-                                        <i class="fa fa-internet-explorer"></i>
+                                        <i class="fa fa-firefox"></i>
                                     </div>
                                     <input type="text" name="meta-description" class="form-control pull-right" placeholder="meta description pour le referencement(SEO)" value="<?php echo !empty($editer->meta_description) ? $editer->meta_description : ''; ?>">
                                 </div>

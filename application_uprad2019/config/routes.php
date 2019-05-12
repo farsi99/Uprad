@@ -68,6 +68,10 @@ $route['admin-uprad/update-page/(:any)'] = 'bo/adminaccueil/updateArticle/$1';
 $route['admin-uprad/delete-actualite/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
 $route['admin-uprad/delete-page/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
 
-//deconnextion
+//membre
+$route['admin-uprad/adherant'] = 'compte/getAdherant';
+$route['admin-uprad/ajout-adherant'] = 'compte/addAdherant';
+$route['admin-uprad/update-adherant/(:any)'] = 'compte/updateAdherant/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
