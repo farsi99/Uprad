@@ -38,12 +38,17 @@ class General_model extends MY_Model
     /**
      * cette méthode retourne un ensemble des données 
      * @param string $_table
+     * @param integer $_etat
      * @return array|bool
      */
-    public function AfficherDesDonnes($_table)
+    public function AfficherDesDonnes($_table, $_etat = null)
     {
+        $where = "";
+        if (isset($_etat) && is_numeric($_etat)) {
+            $where .= "WHERE etat=$_etat";
+        }
         if (!empty($_table)) {
-            $req = "SELECT * FROM $_table ORDER BY id";
+            $req = "SELECT * FROM $_table $where ORDER BY id";
             $result = $this->db->query($req)->result();
             if (!empty($result)) {
                 return $result;

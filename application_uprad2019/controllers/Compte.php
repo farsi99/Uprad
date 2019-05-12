@@ -51,10 +51,18 @@ class Compte extends MY_Controller
 
     /**
      * cette méthode traite l'affichage des membres adhérants 
+     * @param integer $_idmembre //cette identifiant est facultatif
      */
-    public function getAdherant()
+    public function getAdherant($_idmembre = null)
     {
-
+        if ($this->session->userdata['logged_in'] != 1) {
+            redirect('compte');
+        }
+        if (!empty($_idmembre) && is_numeric($_idmembre)) {
+            $dataUpdate = array('etat' => 1);
+            $this->General_model->ModifierDonnesEnBase($_idmembre, $dataUpdate, $this->tableMembre);
+            $this->session->set_flashdata('success', ENREGISTREMENT);
+        }
         $data['title'] = 'Adherant';
         $data['membres'] = $this->General_model->AfficherDesDonnes($this->tableMembre);
         $this->layout->view('compte/adherant', $data);
@@ -65,6 +73,9 @@ class Compte extends MY_Controller
      */
     public function addAdherant()
     {
+        if ($this->session->userdata['logged_in'] != 1) {
+            redirect('compte');
+        }
         $data['title'] = 'Ajout membre';
         if ($this->input->post()) {
             $this->form_validation->set_rules('nom', 'nom', 'trim|required');
@@ -117,6 +128,9 @@ class Compte extends MY_Controller
      */
     public function updateAdherant($_idmembre = null)
     {
+        if ($this->session->userdata['logged_in'] != 1) {
+            redirect('compte');
+        }
         $data['title'] = 'Modifier un membre';
         if (!empty($_idmembre) && is_numeric($_idmembre)) {
             $data['editer'] = $this->General_model->AfficherUneDonnes($_idmembre, $this->tableMembre);
@@ -160,11 +174,24 @@ class Compte extends MY_Controller
                 if (!empty($filename)) { //On verifie s'il y a une photo on écrase l'ancien sinon on fait rien
                     $dataUpdate['photo'] = $filename;
                 }
-                $this->General_model->AjoutDonnesEnBase($dataUpdate, $this->tableMembre);
-                redirect('admin-uprad/adherant');
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableMembre);
                 $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/adherant');
             }
         }
         $this->layout->view('compte/ajout-adherant', $data);
+    }
+
+    /**
+     * cette méthode supprime les données en base
+     * @param integer $_idmemebre
+     */
+    public function deleteAdherant($_idmembre)
+    {
+        if (!empty($_idmembre) && is_numeric($_idmembre)) {
+            $this->General_model->SupprimerLesDonnes($_idmembre, $this->tableMembre);
+            $this->session->set_flashdata('success', SUPPRESSION);
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        }
     }
 }

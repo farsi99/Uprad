@@ -5,6 +5,7 @@ class Adminaccueil extends MY_Controller
 {
     private $tableArticle = 'article';
     private $tableAssociation = 'ass-station-article';
+    private $tableSalon = 'salonidee';
 
     public function __construct()
     {
@@ -257,5 +258,29 @@ class Adminaccueil extends MY_Controller
             $this->session->set_flashdata('success', SUPPRESSION);
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
+    }
+
+
+    /******************** Gestion de salon des idées************************ */
+
+    /**
+     * cette méthode traie l'affichage des salons des idées
+     */
+    public function getIdees()
+    {
+        $url = $this->uri->segment(2);
+        switch ($url) {
+            case 'tous-idees':
+                $data['salons'] = $this->General_model->AfficherDesDonnes($this->tableSalon);
+                break;
+            case 'attente-idees':
+                $data['salons'] = $this->General_model->AfficherDesDonnes($this->tableSalon, 0);
+                break;
+            case 'retenues-idees':
+                $data['salons'] = $this->General_model->AfficherDesDonnes($this->tableSalon, 1);
+                break;
+        }
+        $data['title'] = "Salon des idées";
+        $this->layout->view('bo/accueil/salon-idee', $data);
     }
 }

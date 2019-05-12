@@ -49,7 +49,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/user3-128x128.jpg">
+                                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
                                         </div>
                                         <h4>
                                             AdminLTE Design Team
@@ -239,13 +239,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <img alt="User Image" class="user-image" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
+                        <img alt="User Image" class="user-image" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
                         <span class="hidden-xs"><?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['nom'] : ''; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
+                            <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
                             <p>
                                 <?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['prenom'] . ' ' . $this->session->userdata['prenom'] : ''; ?>
                                 <small>Membre depuis Nov. 2012</small>
@@ -253,17 +253,7 @@
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </div>
+
                             <!-- /.row -->
                         </li>
                         <!-- Menu Footer-->
@@ -272,7 +262,7 @@
                                 <a class="btn btn-default btn-flat" href="#">Votre profile</a>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-default btn-flat" href="{{path('security_logout')}}">Déconnexion</a>
+                                <a class="btn btn-default btn-flat" href="<?php echo site_url('deconnexion'); ?>">Déconnexion</a>
                             </div>
                         </li>
                     </ul>

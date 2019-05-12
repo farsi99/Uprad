@@ -4,27 +4,23 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-12">
-                <?php if ($this->session->flashdata('success')) { ?>
-                    <div class="callout callout-success">
-                        <p><?php echo $this->session->flashdata('success'); ?></p>
-                    </div>
-                <?php   } ?>
-            </div>
+
             <form method="POST" <?php if (empty($editer)) { ?> action="<?php echo site_url('admin-uprad/ajout-adherant'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/update-adherant'); ?>" <?php } ?> enctype="multipart/form-data">
-                <input type="hidden" name="id_type" value="1">
                 <input type="hidden" name="id" value="<?php echo !empty($editer->id) ? $editer->id : ''; ?>">
                 <!-- /.col (left) -->
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-body">
                             <!-- Date -->
+                            <?php $civ = array('Madame', 'Monsieur'); ?>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Civilité</label>
                                 <div class="col-sm-10 input-group date">
                                     <select name="civilite" class="form-control">
-                                        <option value="Madame">Madame</option>
-                                        <option value="Monsieur">Monsieur</option>
+                                        <?php foreach ($civ as $val) { ?>
+                                            <option value="<?php echo $val; ?>" <?php echo !empty($editer->civilite) && $editer->civilite == $val ? "selected" : ""; ?>><?php echo $val; ?></option>
+                                        <?php   } ?>
+
                                     </select>
                                 </div>
                                 <!-- /.input group -->
@@ -174,9 +170,11 @@
                                 </div>
                                 <!-- /.input group -->
                             </div>
-                            <div class="user-header">
-                                <img alt="User Image" style="width:80px; heigth:150px;" class="img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($editer->photo) ? $editer->photo : ''; ?>">
-                            </div>
+                            <?php if (!empty($editer->photo)) { ?>
+                                <div class="user-header">
+                                    <img alt="User Image" style="width: 112px;heigth: 150px !important;margin-top: 5px;margin-left: 93px;border: 2px solid #E7E7E7;" class="img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($editer->photo) ? $editer->photo : ''; ?>">
+                                </div>
+                            <?php } ?>
                         </div>
                         <!-- /.box-body -->
                     </div>

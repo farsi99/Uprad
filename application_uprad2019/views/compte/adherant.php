@@ -46,18 +46,18 @@
                                                         <td><?php echo $val->email; ?></td>
                                                         <td><?php echo $val->telephone; ?></td>
                                                         <td><?php echo $val->etat == 1 ? "<span class='label label-success'>validé</span>" : "<span class='label label-warning'>En attente</span>"; ?></td>
-                                                        <td><?php echo $val->dateAdhesion; ?></td>
+                                                        <td><?php echo strftime('%d/%m/%Y à %Hh%M', strtotime($val->dateAdhesion));  ?></td>
                                                         <td>
-                                                            <a <?php echo $val->etat == 1 ? "disabled" : ''; ?>class="btn btn-success btn-sm" href="<?php echo $val->etat == 1 ? "#" : site_url('admin-uprad//' . $val->id); ?>" type="button">
+                                                            <a <?php echo $val->etat == 1 ? "disabled" : ''; ?>class="btn btn-success btn-sm" href="<?php echo $val->etat == 1 ? "#" : site_url('admin-uprad/adherant/' . $val->id); ?>" type="button">
                                                                 <i class="fa fa-check" title="Valider"></i>
                                                             </a>
-                                                            <a class="btn btn-default btn-sm" href="<?php echo site_url('admin-uprad/update-actualite/' . $val->id); ?>" type="button">
+                                                            <a class="btn btn-default btn-sm clickmembre" id="<?php echo $val->id; ?>" type="button" data-toggle="modal" data-target="#myMembre">
                                                                 <i class="fa fa-eye" title="Consulter"></i>
                                                             </a>
                                                             <a class="btn btn-info btn-sm" href="<?php echo site_url('admin-uprad/update-adherant/' . $val->id); ?>" type="button">
                                                                 <i class="fa fa-edit" title="Modifier"></i>
                                                             </a>
-                                                            <a class="btn btn-danger btn-sm" href="<?php echo site_url('admin-uprad/delete-actualite/' . $val->id); ?>" type="button">
+                                                            <a class="btn btn-danger btn-sm" href="<?php echo site_url('admin-uprad/delete-adherant/' . $val->id); ?>" type="button">
                                                                 <i class="fa fa-trash-o" title="Supprimer"></i>
                                                             </a>
                                                         </td>
@@ -98,3 +98,31 @@
     </section>
     <!-- /.content -->
 </div>
+
+<div id="myMembre" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Fiche d'un membre</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".clickmembre").click(function() {
+            var id = $(this).attr('id');
+            console.log(id);
+        });
+    });
+</script>

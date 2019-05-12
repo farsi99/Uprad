@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/admin/img/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
+                <img alt="User Image" class="img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($this->session->userdata['photo']) ? $this->session->userdata['photo'] : ''; ?>">
             </div>
             <div class="pull-left info">
                 <p style="text-transform:uppercase;"><?php echo !empty($this->session->userdata['prenom']) ? $this->session->userdata['prenom'] : ''; ?></p>
@@ -108,17 +108,17 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="pages/UI/general.html">
+                        <a href="<?php echo site_url('admin-uprad/tous-idees'); ?>">
                             <i class="fa fa-circle-o"></i>
                             toutes les propositions</a>
                     </li>
                     <li>
-                        <a href="pages/UI/icons.html">
+                        <a href="<?php echo site_url('admin-uprad/attente-idees'); ?>">
                             <i class="fa fa-circle-o"></i>
                             En attentes</a>
                     </li>
                     <li>
-                        <a href="pages/UI/buttons.html">
+                        <a href="<?php echo site_url('admin-uprad/retenues-idees'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Retenues</a>
                     </li>

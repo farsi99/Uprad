@@ -70,8 +70,20 @@ $route['admin-uprad/delete-page/(:any)'] = 'bo/adminaccueil/deleteArticle/$1';
 
 //membre
 $route['admin-uprad/adherant'] = 'compte/getAdherant';
+$route['admin-uprad/adherant/(:any)'] = 'compte/getAdherant/$1';
 $route['admin-uprad/ajout-adherant'] = 'compte/addAdherant';
+$route['admin-uprad/update-adherant'] = 'compte/updateAdherant';
 $route['admin-uprad/update-adherant/(:any)'] = 'compte/updateAdherant/$1';
+$route['admin-uprad/delete-adherant/(:any)'] = 'compte/deleteAdherant/$1';
+//deconnexion
+$route['deconnexion'] = 'compte/logout';
+
+//salon des idées
+$route['admin-uprad/tous-idees'] = 'bo/adminaccueil/getIdees';
+$route['admin-uprad/attente-idees'] = 'bo/adminaccueil/getIdees';
+$route['admin-uprad/retenues-idees'] = 'bo/adminaccueil/getIdees';
+
+$route['admin-uprad/update-idees'] = 'bo/adminaccueil/updateIdees';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
