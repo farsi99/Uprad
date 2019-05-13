@@ -5,7 +5,7 @@
     <section class="content">
         <div class="row">
 
-            <form method="POST" <?php if (empty($editer)) { ?> action="<?php echo site_url('admin-uprad/ajout-adherant'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/update-adherant'); ?>" <?php } ?> enctype="multipart/form-data">
+            <form method="POST" <?php if (!empty($editer)) { ?> action="<?php echo site_url('admin-uprad/update-salon'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/update-adherant'); ?>" <?php } ?> enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo !empty($editer->id) ? $editer->id : ''; ?>">
                 <!-- /.col (left) -->
                 <div class="col-md-8">
@@ -78,74 +78,51 @@
                                         <i class="fa fa-phone"></i>
                                     </span>
                                 </div>
-                                <?php if (form_error('telephone')) { ?>
-                                    <div class="alert alert-danger small">
-                                        <?php echo form_error('telephone'); ?>
-                                    </div>
-                                <?php } ?>
                                 <!-- /.input group -->
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Adresse</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Catégorie</label>
                                 <div class="col-sm-10 input-group date">
-                                    <input type="text" name="adresse" class="form-control pull-right" placeholder="Adresse" value="<?php echo !empty($editer->adresse) ? $editer->adresse : ''; ?>">
+                                    <input type="text" name="typeidee" class="form-control pull-right" placeholder="Catégorie" value="<?php echo !empty($editer->typeidee) ? $editer->typeidee : ''; ?>">
                                     <span class="input-group-addon">
-                                        <i class="fa fa-map-signs"></i>
+                                        <i class="fa fa-cogs"></i>
                                     </span>
                                 </div>
-                                <?php if (form_error('adresse')) { ?>
-                                    <div class="alert alert-danger small">
-                                        <?php echo form_error('adresse'); ?>
-                                    </div>
-                                <?php } ?>
                                 <!-- /.input group -->
                             </div>
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Code Postal</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Sujet</label>
                                 <div class="col-sm-10 input-group date">
-                                    <input type="text" name="cp" class="form-control pull-right" placeholder="Code postal" value="<?php echo !empty($editer->cp) ? $editer->cp : ''; ?>">
+                                    <input type="text" name="sujet" class="form-control pull-right" placeholder="Sujet" value="<?php echo !empty($editer->sujet) ? $editer->sujet : ''; ?>">
                                     <span class="input-group-addon">
-                                        <i class="fa fa-codepen"></i>
+                                        <i class="fa fa-commenting-o"></i>
                                     </span>
                                 </div>
-                                <?php if (form_error('adresse')) { ?>
+                                <?php if (form_error('sujet')) { ?>
                                     <div class="alert alert-danger small">
-                                        <?php echo form_error('adresse'); ?>
+                                        <?php echo form_error('sujet'); ?>
                                     </div>
                                 <?php } ?>
                                 <!-- /.input group -->
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Ville</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Contenu</label>
                                 <div class="col-sm-10 input-group date">
-                                    <input type="text" name="ville" class="form-control pull-right" placeholder="ville" value="<?php echo !empty($editer->ville) ? $editer->ville : ''; ?>">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-home"></i>
-                                    </span>
+                                    <textarea name="contenu" class="form-control pull-right" cols="80" rows="8" placeholder="contenu">
+                                    <?php echo !empty($editer->contenu) ? $editer->contenu : ''; ?>
+                                    </textarea>
+
                                 </div>
-                                <?php if (form_error('adresse')) { ?>
+                                <?php if (form_error('contenu')) { ?>
                                     <div class="alert alert-danger small">
-                                        <?php echo form_error('adresse'); ?>
+                                        <?php echo form_error('contenu'); ?>
                                     </div>
                                 <?php } ?>
+
                                 <!-- /.input group -->
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Fonction</label>
-                                <div class="col-sm-10 input-group date">
-                                    <input type="text" name="fonction" class="form-control pull-right" placeholder="fonction" value="<?php echo !empty($editer->fonction) ? $editer->fonction : ''; ?>">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-black-tie"></i>
-                                    </span>
-                                </div>
-                                <?php if (form_error('adresse')) { ?>
-                                    <div class="alert alert-danger small">
-                                        <?php echo form_error('adresse'); ?>
-                                    </div>
-                                <?php } ?>
-                                <!-- /.input group -->
-                            </div>
+
 
                         </div>
                         <!-- /.box-body -->
@@ -155,49 +132,33 @@
                 </div>
                 <!-- /.col (right) -->
                 <div class="col-md-4">
-                    <!-- /bloc chargment d'image -->
-                    <div class="box box-danger">
-                        <div class="box-header">
-                            <h3 class="box-title">Charger une photo</h3>
-                        </div>
-                        <div class="box-body">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-photo"></i>
-                                    </div>
-                                    <input type="file" name="fichier" class="form-control" data-mask>
-                                </div>
-                                <!-- /.input group -->
-                            </div>
-                            <?php if (!empty($editer->photo)) { ?>
-                                <div class="box-body box-profile">
-                                    <img class="profile-user-img img-responsive img-circle" src="<?php echo base_url(); ?>assets/photos/<?php echo !empty($editer->photo) ? $editer->photo : ''; ?>" alt="User profile picture">
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-
                     <!-- categorie -->
                     <div class="box box-success">
                         <div class="box-header">
-                            <h3 class="box-title">Valider un memebre</h3>
+                            <h3 class="box-title">Gestion des idées</h3>
                         </div>
                         <div class="box-body">
                             <!-- Minimal style -->
-
+                            <?php $valid = array(0 => 'En attente', 1 => 'Retenue', 2 => 'Refusée'); ?>
                             <div class="col-xs-12 col-sm-12 no_padding">
-                                <input type="checkbox" name="etat" id="etat_membre" <?php echo !empty($editer->etat) && $editer->etat == 1 ? "checked" : ""; ?> value="<?php echo 'checked' ? 1 : 0; ?>">
-                                <label for="etat_membre"> <?php echo !empty($editer->etat) && $editer->etat == 1 ? "Déjà membre" : "en attente de validation"; ?></label>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Status</label>
+                                    <div class="col-sm-10 input-group date">
+                                        <select name="etat" id="" class="form-control">
+                                            <?php foreach ($valid as $key => $val) { ?>
+                                                <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                                            <?php    } ?>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="box-body">
                         <div class="col-xs-12 col-sm-6 no_padding">
-                            <input type="submit" value="<?php echo !empty($editer) ? "Modifier un membre" : "Enregistrer un membre"; ?>" class="btn btn-info" style="padding :10px;  margin-left :-22px;margin-bottom:5px;">
+                            <input type="submit" value="<?php echo !empty($editer) ? "Modifier l'etat d'une idéé et enregistrer" : "Enregistrer un membre"; ?>" class="btn btn-info" style="padding :10px;  margin-left :-22px;margin-bottom:5px;">
                         </div>
                     </div>
                 </div>

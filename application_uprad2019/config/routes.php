@@ -83,7 +83,8 @@ $route['admin-uprad/tous-idees'] = 'bo/adminaccueil/getIdees';
 $route['admin-uprad/attente-idees'] = 'bo/adminaccueil/getIdees';
 $route['admin-uprad/retenues-idees'] = 'bo/adminaccueil/getIdees';
 
-$route['admin-uprad/update-idees'] = 'bo/adminaccueil/updateIdees';
+$route['admin-uprad/update-salon'] = 'bo/adminaccueil/updateIdees';
+$route['admin-uprad/update-salon/(:any)'] = 'bo/adminaccueil/updateIdees/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

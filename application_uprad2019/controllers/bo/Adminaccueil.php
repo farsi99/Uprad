@@ -283,4 +283,44 @@ class Adminaccueil extends MY_Controller
         $data['title'] = "Salon des idées";
         $this->layout->view('bo/accueil/salon-idee', $data);
     }
+    /**
+     * cette méthode traite la modification ou validation d'idée
+     * @param integer $_idIdee
+     *
+     */
+    public function updateIdees($_idIdee = null)
+    {
+        $data['title'] = 'Modifier une idée';
+        if (!empty($_idIdee) && is_numeric($_idIdee)) {
+            $data['editer'] = $this->General_model->AfficherUneDonnes($_idIdee, $this->tableSalon);
+        }
+
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('contenu', 'contenu', 'trim|required');
+            $this->form_validation->set_rules('nom', 'nom', 'trim|required');
+            $this->form_validation->set_rules('prenom', 'prenom', 'trim|required');
+            $this->form_validation->set_rules('email', 'email', 'trim|valid_email|required');
+            $this->form_validation->set_rules('sujet', 'sujet', 'trim|required');
+
+
+            if ($this->form_validation->run() == true) {
+
+                $dataUpdate = array(
+                    'civilite' => $this->input->post('civilite'),
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
+                    'email' => $this->input->post('email'),
+                    'telephone' => $this->input->post('telephone'),
+                    'typeidee' => $this->input->post('typeidee'),
+                    'etat' => $this->input->post('etat'),
+                    'sujet' => $this->input->post('sujet'),
+                    'contenu' => $this->input->post('contenu')
+                );
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableSalon);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/tous-idees');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-salon', $data);
+    }
 }
