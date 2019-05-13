@@ -38,7 +38,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#">
+                        <a href="<?php echo site_url('admin-uprad'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Tableau de bord</a>
                     </li>
@@ -136,17 +136,17 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="pages/forms/general.html">
+                        <a href="<?php echo site_url('admin-uprad/evenement'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Tous les agendas</a>
                     </li>
                     <li>
-                        <a href="pages/forms/advanced.html">
+                        <a href="<?php echo site_url('admin-uprad/evenement-attente'); ?>">
                             <i class="fa fa-circle-o"></i>
                             En attente</a>
                     </li>
                     <li>
-                        <a href="pages/forms/editors.html">
+                        <a href="<?php echo site_url('admin-uprad/ajout-evenement'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Ajouter</a>
                     </li>

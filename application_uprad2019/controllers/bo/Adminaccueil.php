@@ -6,6 +6,7 @@ class Adminaccueil extends MY_Controller
     private $tableArticle = 'article';
     private $tableAssociation = 'ass-station-article';
     private $tableSalon = 'salonidee';
+    private $tableEvent = 'evenement';
 
     public function __construct()
     {
@@ -322,5 +323,108 @@ class Adminaccueil extends MY_Controller
             }
         }
         $this->layout->view('bo/accueil/ajout-salon', $data);
+    }
+
+    /********************gestion evenement agendan****************** */
+
+    /**
+     * cette méthode traite l'affichage de tous les evenements
+     */
+    public function getEvenement()
+    {
+        $data['title'] = 'Agenda événements';
+        $url = $this->uri->segment(2);
+        switch ($url) {
+            case 'evenement':
+                $data['events'] = $this->General_model->AfficherDesDonnes($this->tableEvent);
+                break;
+            case 'evenement-attente':
+                $data['events'] = $this->General_model->AfficherDesDonnes($this->tableEvent, 0);
+                break;
+        }
+
+        $this->layout->view('bo/accueil/evenement', $data);
+    }
+
+    /**
+     * cette méthode permet d'ajouter un evenement
+     */
+    public function addEvenement()
+    {
+        $data['title'] = 'Ajouter un evenement';
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('titre', 'titre', 'trim|required|min_length[5]');
+            $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
+            $this->form_validation->set_rules('dateDebut', 'date début', 'trim|required');
+            $this->form_validation->set_rules('dateFin', 'date fin', 'trim|required');
+            $this->form_validation->set_rules('nom', 'nom', 'trim|required|min_length[2]');
+            $this->form_validation->set_rules('prenom', 'prenom', 'trim|required|min_length[2]');
+            $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
+            if ($this->form_validation->run() == true) {
+                $dataInsert = array(
+                    'titre' => $this->input->post('titre'),
+                    'description' => $this->input->post('description'),
+                    'dateDebut' => $this->input->post('dateDebut'),
+                    'dateFin' => $this->input->post('dateFin'),
+                    'adresse' => $this->input->post('adresse'),
+                    'cp' => $this->input->post('cp'),
+                    'ville' => $this->input->post('ville'),
+                    'typeEvenement' => $this->input->post('typeEvenement'),
+                    'etat' => $this->input->post('status'),
+                    'Organisateur' => $this->input->post('Organisateur'),
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
+                    'email' => $this->input->post('email'),
+                    'telephone' => $this->input->post('telephone')
+                );
+                $this->General_model->AjoutDonnesEnBase($dataInsert, $this->tableEvent);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/evenement');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-evenement', $data);
+    }
+
+    /**
+     * cette méthode traite les modifications des données evenements
+     * @param integer $_idEvent
+     */
+    public function updateEvenement($_idEvent = null)
+    {
+        $data['title'] = 'Modifier un événement';
+        if (!empty($_idEvent) && is_numeric($_idEvent)) {
+            $data['editer'] = $this->General_model->AfficherUneDonnes($_idEvent, $this->tableEvent);
+        }
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('titre', 'titre', 'trim|required|min_length[5]');
+            $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
+            $this->form_validation->set_rules('dateDebut', 'date début', 'trim|required');
+            $this->form_validation->set_rules('dateFin', 'date fin', 'trim|required');
+            $this->form_validation->set_rules('nom', 'nom', 'trim|required|min_length[2]');
+            $this->form_validation->set_rules('prenom', 'prenom', 'trim|required|min_length[2]');
+            $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
+            if ($this->form_validation->run() == true) {
+                $dataUpdate = array(
+                    'titre' => $this->input->post('titre'),
+                    'description' => $this->input->post('description'),
+                    'dateDebut' => $this->input->post('dateDebut'),
+                    'dateFin' => $this->input->post('dateFin'),
+                    'adresse' => $this->input->post('adresse'),
+                    'cp' => $this->input->post('cp'),
+                    'ville' => $this->input->post('ville'),
+                    'typeEvenement' => $this->input->post('typeEvenement'),
+                    'etat' => $this->input->post('status'),
+                    'Organisateur' => $this->input->post('Organisateur'),
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
+                    'email' => $this->input->post('email'),
+                    'telephone' => $this->input->post('telephone')
+                );
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableEvent);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/evenement');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-evenement', $data);
     }
 }

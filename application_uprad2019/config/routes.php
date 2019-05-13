@@ -86,5 +86,14 @@ $route['admin-uprad/retenues-idees'] = 'bo/adminaccueil/getIdees';
 $route['admin-uprad/update-salon'] = 'bo/adminaccueil/updateIdees';
 $route['admin-uprad/update-salon/(:any)'] = 'bo/adminaccueil/updateIdees/$1';
 
+//Evenementiels
+$route['admin-uprad/evenement'] = 'bo/adminaccueil/getEvenement';
+$route['admin-uprad/evenement-attente'] = 'bo/adminaccueil/getEvenement';
+$route['admin-uprad/ajout-evenement'] = 'bo/adminaccueil/addEvenement';
+$route['admin-uprad/update-evenement'] = 'bo/adminaccueil/updateEvenement';
+$route['admin-uprad/update-evenement/(:any)'] = 'bo/adminaccueil/updateEvenement/$1';
+$route['admin-uprad/delete-evenement/(:any)'] = 'bo/adminaccueil/deleteEvenement/$1';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
