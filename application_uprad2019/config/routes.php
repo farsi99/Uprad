@@ -51,7 +51,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'accueil';
 
-//Backoffice du site
+/****************Front office du site ******************************/
+$route['mouvement-uprad'] = 'accueil/apropos';
+$route['agenda-evenement'] = 'accueil/getEvenement';
+$route['proposer-evenement'] = 'accueil/addEvenement';
+$route['adhesion'] = 'accueil/addAdhesion';
+
+/******************** Backoffice du site**************************/
 $route['admin-uprad'] = "bo/adminaccueil";
 $route['admin-uprad/actualite'] = 'bo/adminaccueil/getActualite';
 $route['admin-uprad/page'] = 'bo/adminaccueil/getPage';

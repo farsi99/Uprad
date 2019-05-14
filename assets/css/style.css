@@ -1467,6 +1467,7 @@ a.button1:active:before {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
 a.button1.firstcolor {
   background: #006d29;
   border-bottom: 4px solid #ab0617;
@@ -1726,32 +1727,37 @@ a.button1:hover i {
 .main-boxes .one-box1 {
   width: 33.33%;
   float: left;
-  background: #ecf0f1;
+  background: #006d29;
 }
 .main-boxes .one-box1 h3 {
   font-weight: 0;
   margin-bottom: -30px;
+  color: #fff;
 }
 .main-boxes .one-box1 a{
-  background-color: #ecf0f1;
-  color: #ab0617;
+  background-color: #006d29;
+  color: #fff;
 }
 .main-boxes .one-box1 .one-box1-inner {
   width: 100%;
   float: left;
   padding: 50px 0;
-  background: #ecf0f1;
+  background: #006d29;
 }
 .main-boxes .one-box2 {
   width: 33.33%;
   float: left;
-  background: #006d29;
+  background: #ecf0f1; 
+}
+.main-boxes .one-box2 a.button1.firstcolor.small {
+  color:#333 !important;
+  background-color: #ecf0f1;
 }
 .main-boxes .one-box2 .one-box2-inner {
   width: 100%;
   float: left;
   padding: 50px 0;
-  background: #006d29;
+  background: #ecf0f1;
 }
 .main-boxes .one-box2 h2 {
   display: inline-block;
@@ -1776,6 +1782,7 @@ a.button1:hover i {
 }
 .main-boxes .one-box2 h3 {
   margin-bottom: 0;
+  color: #333 !important;
 }
 .main-boxes .one-box2 h1,
 .main-boxes .one-box2 h2,

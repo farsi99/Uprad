@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-lg-6 topright">
                         <a class="button1 firstcolor small whiteborder" href="#" style="background-color: #ab0617!important;">Donner</a>
-                        <a class="button1 firstcolor small whiteborder" href="#">Adherer</a>
+                        <a class="button1 firstcolor small whiteborder" href="<?php echo site_url('adhesion'); ?>">Adherer</a>
 
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                                 <ul class="nav navbar-nav pull-right">
 
                                     <li>
-                                        <a href="#">Qui sommes-nous</a>
+                                        <a href="<?php echo site_url('mouvement-uprad'); ?>">Qui sommes-nous</a>
                                     </li>
                                     <li>
                                         <a href="#">Actualités</a>
@@ -62,7 +62,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">Evenements</a>
+                                        <a href="<?php echo site_url('agenda-evenement'); ?>">Evenements</a>
 
                                     </li>
                                 </ul>

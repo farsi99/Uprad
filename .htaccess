@@ -1,12 +1,18 @@
 Options -Indexes
 
 # Active le module de réécriture d'URL.
-RewriteEngine on
-
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
 
 #   Toutes les URL qui ne correspondent pas à ces masques sont réécrites.
-RewriteCond $1 !^(index\.php|assets/|migration/|cache/|robots\.txt)
+#RewriteCond $1 !^(index\.php|assets/|migration/|cache/|robots\.txt)
 
 #   Toutes les autres URL vont être redirigées vers le fichier index.php.
-RewriteRule ^(.*)$ index.php/$1 [L]
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+
 
