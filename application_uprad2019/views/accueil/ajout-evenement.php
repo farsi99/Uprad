@@ -1,23 +1,4 @@
-<div class="mainheadlinewrapperpage">
-    <div class="mainheadlinewrapperpage-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="mainheadlinepage">
-                        <h1>événement</h1>
-                    </div>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="#">Accueil</a>
-                        </li>
-
-                        <li class="active">proposer un événement</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php $this->load->view('inc/entete-front'); ?>
 <!-- breakpoint for menu -->
 <div class="wrapper100percent">
     <div class="menuswitch"></div>

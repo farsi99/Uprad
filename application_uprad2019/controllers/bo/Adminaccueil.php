@@ -7,6 +7,7 @@ class Adminaccueil extends MY_Controller
     private $tableAssociation = 'ass-station-article';
     private $tableSalon = 'salonidee';
     private $tableEvent = 'evenement';
+    private $tableStation = 'station';
 
     public function __construct()
     {
@@ -29,6 +30,74 @@ class Adminaccueil extends MY_Controller
         $data['title'] = "Tableau de bord";
         $this->layout->view('bo/accueil/accueil', $data);
     }
+
+    /**
+     * cette méthode traite les catégories des articles(station)
+     * 
+     */
+    public function getCategorie()
+    {
+        $data['title'] = 'Catégorie des articles';
+        $data['stations'] = $this->General_model->Touslesstations();
+        $this->layout->view('bo/accueil/station', $data);
+    }
+
+    /**
+     * cette méthode traite l'ajout d'un catégrie(station)
+     */
+    public function addCategorie()
+    {
+        $data['title'] = 'Ajout d\une catégorie';
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('libelle', 'libelle', 'trim|required');
+            if ($this->form_validation->run() == TRUE) {
+                $dataInsert = array('libelle' => $this->input->post('libelle'));
+                $this->General_model->AjoutDonnesEnBase($dataInsert, $this->tableStation);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/categorie');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-categorie', $data);
+    }
+
+    /**
+     * cette méthode permet de mofier une catégorie
+     * @param integer $_idStation
+     */
+    public function updateCategorie($_idStation = null)
+    {
+        $data['title'] = 'Modifier une catégorie';
+        if (!empty($_idStation) && is_numeric($_idStation)) {
+            $data['editer'] = $this->General_model->AfficherUneDonnes($_idStation, $this->tableStation);
+        }
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('libelle', 'libelle', 'trim|required');
+            if ($this->form_validation->run() == TRUE) {
+                $dataUpdate = array('libelle' => $this->input->post('libelle'));
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableStation);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/categorie');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-categorie', $data);
+    }
+
+    /**
+     * cette méthode traite la suppression  des catégories
+     * @param integer $_idStation
+     */
+    public function deleteCategorie($_idStation)
+    {
+        if (!empty($_idStation) && is_numeric($_idStation)) {
+            $this->General_model->SupprimerLesDonnes($_idStation, $this->tableStation, 1);
+            $this->session->set_flashdata('success', SUPPRESSION);
+            redirect('admin-uprad/categorie');
+        }
+    }
+
+
+
+
 
     /**
      * cette méthode traite l'affichage des actulités dans son ensemble ou par catégorie
@@ -60,6 +129,7 @@ class Adminaccueil extends MY_Controller
     }
 
 
+
     /**
      * cette méthode permet d'ajouter un actualité ou une page
      *
@@ -81,15 +151,16 @@ class Adminaccueil extends MY_Controller
                     $config['upload_path'] = './assets/img/';
                     $config['allowed_types'] = 'gif|jpg|jpeg|png|svg|doc|docx|pdf';
                     $config['max_size'] = 2024 * 2;
-                    $config['encrypt_name'] = FALSE;
+                    $config['encrypt_name'] = true;
                     $config['file_name'] = $_FILES['fichier']['name'];
-                    $filename = $config['file_name'];
                     $this->load->library('upload', $config);
                     $this->upload->initialize($config);
                     if (!$this->upload->do_upload("fichier")) {
                         $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
                     } else {
-                        $data['uploadSuccess'] = array('upload_data' => $this->upload->data());
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                        $this->resizeImage($filename);
                     }
                 }
                 if ($this->input->post('id_type') == 1) { //Quand il s'agit d'un article
@@ -104,7 +175,8 @@ class Adminaccueil extends MY_Controller
                         'article_type_id' => $this->input->post('id_type'),
                         'format' => $this->input->post('format'),
                         'status' => $this->input->post('status'),
-                        'content' => $this->input->post('contenu')
+                        'content' => $this->input->post('contenu'),
+                        'auteur' => $this->input->post('auteur')
 
                     );
                 } elseif ($this->input->post('id_type') == 2) { //Quand il s'agit d'une page
@@ -117,7 +189,8 @@ class Adminaccueil extends MY_Controller
                         'resume' => $this->input->post('resume'),
                         'date_creation' => $this->input->post('date-publication'),
                         'article_type_id' => $this->input->post('id_type'),
-                        'content' => $this->input->post('contenu')
+                        'content' => $this->input->post('contenu'),
+
                     );
                 }
                 $ajoutArticlie = $this->General_model->AjoutDonnesEnBase($dataInsert, $this->tableArticle);
@@ -172,15 +245,16 @@ class Adminaccueil extends MY_Controller
                     $config['upload_path'] = './assets/img/';
                     $config['allowed_types'] = 'gif|jpg|jpeg|png|svg|doc|docx|pdf';
                     $config['max_size'] = 2024 * 2;
-                    $config['encrypt_name'] = FALSE;
+                    $config['encrypt_name'] = true;
                     $config['file_name'] = $_FILES['fichier']['name'];
-                    $filename = $config['file_name'];
                     $this->load->library('upload', $config);
                     $this->upload->initialize($config);
                     if (!$this->upload->do_upload("fichier")) {
                         $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
                     } else {
-                        $data['uploadSuccess'] = array('upload_data' => $this->upload->data());
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                        $this->resizeImage($filename);
                     }
                 }
                 if ($this->input->post('id_type') == 1) { //Quand il s'agit d'un article
@@ -194,7 +268,8 @@ class Adminaccueil extends MY_Controller
                         'article_type_id' => $this->input->post('id_type'),
                         'format' => $this->input->post('format'),
                         'status' => $this->input->post('status'),
-                        'content' => $this->input->post('contenu')
+                        'content' => $this->input->post('contenu'),
+                        'auteur' => $this->input->post('auteur')
 
                     );
                 } elseif ($this->input->post('id_type') == 2) { //Quand il s'agit d'une page
@@ -260,6 +335,7 @@ class Adminaccueil extends MY_Controller
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
     }
+
 
 
     /******************** Gestion de salon des idées************************ */
@@ -426,5 +502,35 @@ class Adminaccueil extends MY_Controller
             }
         }
         $this->layout->view('bo/accueil/ajout-evenement', $data);
+    }
+
+
+
+
+
+    /**
+     * cette méthode privée traite la taille des images 
+     *
+     * @return Response
+     */
+    function resizeImage($filename)
+    {
+        $source_path =  './assets/img/' . $filename;
+        $target_path =  './assets/img/thumbs/';
+        $config_manip = array(
+            'image_library' => 'gd2',
+            'source_image' => $source_path,
+            'new_image' => $target_path,
+            'maintain_ratio' => TRUE,
+            'create_thumb' => TRUE,
+            'thumb_marker' => '',
+            'width' => 150,
+            'height' => 150
+        );
+        $this->load->library('image_lib', $config_manip);
+        if (!$this->image_lib->resize()) {
+            echo $this->image_lib->display_errors();
+        }
+        $this->image_lib->clear();
     }
 }

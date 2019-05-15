@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="responsive-wrapper">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="/">
                                 <img alt="" src="assets/images/logo.png" />
                             </a>
                             <div class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" id="toggle-icon">

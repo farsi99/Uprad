@@ -87,6 +87,20 @@
                             </div>
                             <!-- /.form group -->
 
+
+                            <!-- Date and time range -->
+                            <div class="form-group">
+                                <label>Auteur</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <input type="text" name="auteur" class="form-control pull-right" value="<?php echo !empty($this->session->userdata['nom']) ? $this->session->userdata['nom'] . ' ' . $this->session->userdata['prenom'] : ''; ?>">
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+
                         </div>
                         <!-- /.box-body -->
                     </div>

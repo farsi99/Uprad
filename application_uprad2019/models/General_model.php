@@ -15,9 +15,10 @@ class General_model extends MY_Model
      * @param integer $_idstation //cette parametre peut etre null
      * @param integer $_idtype  //definir si c'est une page ou actualité
      * @param integer $_limite
+     * @param integer $_etat
      * @return array|bool
      */
-    public function Touslesactualites($_idstation = null, $_idtype, $_limite = null)
+    public function Touslesactualites($_idstation = null, $_idtype, $_limite = null, $_etat = null)
     {
         $limite = "";
         if (!empty($_limite) && is_numeric($_limite)) {
@@ -28,7 +29,10 @@ class General_model extends MY_Model
             if (is_numeric($_idstation) && !empty($_idstation)) {
                 $where .= "AND station_id = $_idstation";
             }
-            $req = "SELECT * FROM $this->tableArticle WHERE article_type_id=$_idtype $where $limite";
+            if (!empty($_etat) && is_numeric($_etat)) {
+                $where .= " AND status =$_etat";
+            }
+            $req = "SELECT * FROM $this->tableArticle WHERE article_type_id=$_idtype $where ORDER BY id DESC $limite";
             $result = $this->db->query($req)->result();
             if (!empty($result)) {
                 return $result;

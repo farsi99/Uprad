@@ -65,7 +65,7 @@
                             Ajouter</a>
                     </li>
                     <li>
-                        <a href="pages/layout/fixed.html">
+                        <a href="<?php echo site_url('admin-uprad/categorie'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Catégorie</a>
                     </li>

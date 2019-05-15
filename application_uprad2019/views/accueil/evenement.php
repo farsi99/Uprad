@@ -1,23 +1,4 @@
-<div class="mainheadlinewrapperpage">
-    <div class="mainheadlinewrapperpage-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="mainheadlinepage">
-                        <h1>Evenements</h1>
-                    </div>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="#">Accueil</a>
-                        </li>
-
-                        <li class="active">événement</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php $this->load->view('inc/entete-front'); ?>
 <!-- breakpoint for menu -->
 <div class="wrapper100percent">
     <div class="menuswitch"></div>
@@ -59,7 +40,7 @@
                         </a>
                     </div>
                     <div class="col-xs-12 col-md-4 proposer_evenement text-center">
-                        <a href="">
+                        <a href="<?php echo site_url('proposer-evenement'); ?>">
                             <img src="./assets/images/picto-plus-rouge.svg" style="width:11px;" /> Proposer un événement
                         </a>
                     </div>

@@ -58,7 +58,15 @@ $route['proposer-evenement'] = 'accueil/addEvenement';
 $route['adhesion'] = 'accueil/addAdhesion';
 
 /******************** Backoffice du site**************************/
+
 $route['admin-uprad'] = "bo/adminaccueil";
+//categorie
+$route['admin-uprad/categorie'] = 'bo/adminaccueil/getCategorie';
+$route['admin-uprad/ajout-categorie'] = 'bo/adminaccueil/addCategorie';
+$route['admin-uprad/update-categorie'] = 'bo/adminaccueil/updateCategorie';
+$route['admin-uprad/update-categorie/(:any)'] = 'bo/adminaccueil/updateCategorie/$1';
+$route['admin-uprad/delete-categorie/(:any)'] = 'bo/adminaccueil/deleteCategorie/$1';
+//actualité et pasge
 $route['admin-uprad/actualite'] = 'bo/adminaccueil/getActualite';
 $route['admin-uprad/page'] = 'bo/adminaccueil/getPage';
 $route['admin-uprad/ajout-actualite'] = 'bo/adminaccueil/addActualite';

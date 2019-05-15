@@ -5,7 +5,7 @@
     <section class="content">
         <div class="row">
 
-            <form method="POST" <?php if (!empty($editer)) { ?> action="<?php echo site_url('admin-uprad/update-salon'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/update-adherant'); ?>" <?php } ?> enctype="multipart/form-data">
+            <form method="POST" <?php if (!empty($editer)) { ?> action="<?php echo site_url('admin-uprad/update-salon'); ?>" <?php } else { ?>action="<?php echo site_url('admin-uprad/ajout-salon'); ?>" <?php } ?> enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo !empty($editer->id) ? $editer->id : ''; ?>">
                 <!-- /.col (left) -->
                 <div class="col-md-8">

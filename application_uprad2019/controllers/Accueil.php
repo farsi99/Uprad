@@ -13,6 +13,7 @@ class Accueil extends MY_Controller
     {
         parent::__construct();
         $this->load->model('General_model');
+        setlocale(LC_ALL, 'fr_FR');
     }
 
     /**
@@ -22,13 +23,12 @@ class Accueil extends MY_Controller
      */
     public function index()
     {
-        $data['title'] = 'UPRAD';
-        $data['actus'] = $this->General_model->Touslesactualites(null, 1, 6);
+        $this->layout->setTitre('UPRAD : Union populaire République Algérienne Démocratique');
+        $data['actus'] = $this->General_model->Touslesactualites(null, 1, 5, 1);
         $data['temoignages'] = $this->General_model->AfficherDesDonnes($this->tableTemoignage);
         $data['galeries'] = $this->General_model->AfficherDesDonnes($this->tableGalerie);
         $data['membre'] = $this->General_model->AfficherDesDonnes($this->tableMembre);
         $data['equipe'] = $this->General_model->AfficherDesDonnes($this->tableEquipe);
-
         $this->layout->view('accueil/accueil', $data);
     }
 

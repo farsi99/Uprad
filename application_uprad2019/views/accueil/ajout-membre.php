@@ -1,23 +1,4 @@
-<div class="mainheadlinewrapperpage">
-    <div class="mainheadlinewrapperpage-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="mainheadlinepage">
-                        <h1>adhésion</h1>
-                    </div>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="#">Accueil</a>
-                        </li>
-
-                        <li class="active">Dévénir Adhérent</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php $this->load->view('inc/entete-front'); ?>
 <!-- breakpoint for menu -->
 <div class="wrapper100percent">
     <div class="menuswitch"></div>
@@ -72,11 +53,11 @@
                     <div class="col-xs-12 col-sm-6 no-padding-right">
                         <input type="text" name="fonction" placeholder="Votre fonction">
                     </div>
-                   <!-- <div class="col-xs-12 col-sm-6 no-padding-right">
+                    <!-- <div class="col-xs-12 col-sm-6 no-padding-right">
                         <input id="btn_charger_fichier" type="button" value="Charger une photo, un logo, un PDF…">
                         <input id="input_charger_fichier" type="file" class="hidden">
                     </div>
-                    <input type="hidden" name="date_inscri">   -->                
+                    <input type="hidden" name="date_inscri">   -->
                     <div class="col-xs-12 no-padding-left">
                         <input type="submit" value="Valider" class="cta_rouge">
                     </div>
