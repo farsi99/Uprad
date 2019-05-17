@@ -16,6 +16,7 @@
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/colorbox.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/agenda.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/degrade.css" rel="stylesheet">
 </head>
 
 <body>

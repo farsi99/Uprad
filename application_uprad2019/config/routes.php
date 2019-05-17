@@ -56,6 +56,7 @@ $route['mouvement-uprad'] = 'accueil/apropos';
 $route['agenda-evenement'] = 'accueil/getEvenement';
 $route['proposer-evenement'] = 'accueil/addEvenement';
 $route['adhesion'] = 'accueil/addAdhesion';
+$route['actualites'] = 'accueil/getActualites';
 
 /******************** Backoffice du site**************************/
 
@@ -89,6 +90,16 @@ $route['admin-uprad/ajout-adherant'] = 'compte/addAdherant';
 $route['admin-uprad/update-adherant'] = 'compte/updateAdherant';
 $route['admin-uprad/update-adherant/(:any)'] = 'compte/updateAdherant/$1';
 $route['admin-uprad/delete-adherant/(:any)'] = 'compte/deleteAdherant/$1';
+
+//Equipe
+$route['admin-uprad/equipe'] = 'compte/getEquipe';
+$route['admin-uprad/adherant-equipe'] = 'compte/getConvEquipe';
+$route['admin-uprad/update-equipe'] = 'compte/updateEquipe';
+$route['admin-uprad/update-equipe/(:any)'] = 'compte/updateEquipe/$1';
+$route['admin-uprad/modifier-equipe'] = 'compte/modifierEquipe';
+$route['admin-uprad/modifier-equipe/(:any)'] = 'compte/modifierEquipe/$1';
+$route['admin-uprad/delete-equipe/(:any)'] = 'compte/deleteEquipe/$1';
+
 //deconnexion
 $route['deconnexion'] = 'compte/logout';
 
@@ -107,7 +118,19 @@ $route['admin-uprad/ajout-evenement'] = 'bo/adminaccueil/addEvenement';
 $route['admin-uprad/update-evenement'] = 'bo/adminaccueil/updateEvenement';
 $route['admin-uprad/update-evenement/(:any)'] = 'bo/adminaccueil/updateEvenement/$1';
 $route['admin-uprad/delete-evenement/(:any)'] = 'bo/adminaccueil/deleteEvenement/$1';
+//Témoigngage
+$route['admin-uprad/temoignage'] = 'bo/adminaccueil/getTemoignage';
+$route['admin-uprad/ajout-temoignage'] = 'bo/adminaccueil/addTemoignage';
+$route['admin-uprad/update-temoignage'] = 'bo/adminaccueil/updateTemoignage';
+$route['admin-uprad/update-temoignage/(:any)'] = 'bo/adminaccueil/updateTemoignage/$1';
+$route['admin-uprad/delete-temoignage/(:any)'] = 'bo/adminaccueil/getTemoignage/$1';
 
+//Galerie
+$route['admin-uprad/galerie'] = 'bo/adminaccueil/getGalerie';
+$route['admin-uprad/ajout-galerie'] = 'bo/adminaccueil/addGalerie';
+$route['admin-uprad/update-galerie'] = 'bo/adminaccueil/updateGalerie';
+$route['admin-uprad/update-galerie/(:any)'] = 'bo/adminaccueil/updateGalerie/$1';
+$route['admin-uprad/delete-galerie/(:any)'] = 'bo/adminaccueil/deleteGalerie/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

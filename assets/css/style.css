@@ -1724,6 +1724,7 @@ a.button1:hover i {
 .main-boxes h3{
   text-transform: none !important;
 }
+.actu h3, .actu h4{ text-transform: unset;}
 .main-boxes .one-box1 {
   width: 33.33%;
   float: left;
@@ -3945,11 +3946,76 @@ ul.pagination li a {
 .news-date p {
   color: #fff;
   font-size: 20px;
-  margin: 30px 0 0 20px;
+  margin: 30px 0 0 0px;
   position: relative;
   width: 100px;
 }
-
+.bloc_depeche {
+  height: 500px;
+  max-height: 500px;
+  margin-bottom: 25px;
+  padding-bottom: 40px;
+  position: relative;
+}
+.zoom_img {
+  min-height: 172px;
+}
+.zoom_img {
+  min-height: 175px;
+  overflow: hidden;
+  position: relative;
+}
+.zoom_img img {
+  width: auto;
+  max-height: 250px;
+}
+.pied{
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.zoom_img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -ms-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  -o-transition: all ease 1s;
+}
+.depeche_titre_lead {
+  height: 225px;
+}
+.depeche_titre_lead{
+  overflow: hidden;
+}
+.btn_lire_suite {
+  display: inline-block;
+  font-family: 'stratos-medium','arial','helvetica','sans-serif';
+  font-size: 11px;
+  color: #e4032d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+}
+.bloc_depeche::after {
+  content: '';
+  display: block;
+  width: 91%;
+  height: 1px;
+  background-color: rgb(7, 141, 29);
+  position: absolute;
+  bottom: 0;
+}
+.station{
+  font-size: 12px;
+  padding: 3px !important;
+  background: rgba(237, 28, 36, 0.6) none repeat scroll 0 0;
+}
+.station a{ color: white}
 .news-date::before {
   background: rgba(237, 28, 36, 0.6) none repeat scroll 0 0;
   content: "";

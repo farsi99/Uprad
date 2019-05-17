@@ -51,7 +51,7 @@
                                         <a href="<?php echo site_url('mouvement-uprad'); ?>">Qui sommes-nous</a>
                                     </li>
                                     <li>
-                                        <a href="#">Actualités</a>
+                                        <a href="<?php echo site_url('actualites'); ?>">Actualités</a>
                                     </li>
                                     <li>
                                         <a href="#">Nos propositions</a>

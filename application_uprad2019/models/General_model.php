@@ -239,4 +239,25 @@ class General_model extends MY_Model
             }
         }
     }
+
+    /**
+     * cette méthode va comparer l'adresse ip et la date avant de rajouter la personne dans les statistique
+     * @param string $_ipAdresse
+     * @param string $_platform
+     * @param integer $_jour 
+     * 
+     * */
+
+    public function verifStat($_ipAdresse, $_platform, $_jour)
+    {
+        if (!empty($_ipAdresse) && !empty($_platform) && !empty($_jour)) {
+            $req = "SELECT * FROM historiquevisite WHERE adresseIp ='$_ipAdresse' AND DAY(date_visite)=$_jour AND platform LIKE '%$_platform%'";
+            $result = $this->db->query($req);
+            if ($result->num_rows() > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
 }

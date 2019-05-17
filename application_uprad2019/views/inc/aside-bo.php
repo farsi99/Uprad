@@ -162,12 +162,35 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="pages/tables/simple.html">
+                        <a href="<?php echo site_url('admin-uprad/temoignage'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Toues les témoignages</a>
                     </li>
                     <li>
-                        <a href="pages/tables/data.html">
+                        <a href="<?php echo site_url('admin-uprad/ajout-temoignage'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-photo"></i>
+                    <span>Galerie d'image</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/galerie'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Toutes les images</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/ajout-galerie'); ?>">
                             <i class="fa fa-circle-o"></i>
                             Ajouter</a>
                     </li>
@@ -187,17 +210,17 @@
                     <li>
                         <a href="<?php echo site_url('admin-uprad/adherant'); ?>">
                             <i class="fa fa-circle-o"></i>
-                            Adherants</a>
+                            Tous les adherants</a>
                     </li>
                     <li>
-                        <a href="pages/tables/data.html">
+                        <a href="<?php echo site_url('admin-uprad/equipe'); ?>">
                             <i class="fa fa-circle-o"></i>
-                            Equipes</a>
+                            Toute l'équipe</a>
                     </li>
                     <li>
-                        <a href="pages/tables/data.html">
+                        <a href="<?php echo site_url('admin-uprad/conv-equipe') ?>">
                             <i class="fa fa-circle-o"></i>
-                            Administration</a>
+                            Adherant => équipe</a>
                     </li>
 
                 </ul>

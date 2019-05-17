@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Accueil extends MY_Controller
 {
-    private $tableArticle = 'article';
     private $tableTemoignage = 'temoignage';
     private $tableGalerie = 'galerie';
     private $tableMembre = 'membre';
@@ -14,6 +13,7 @@ class Accueil extends MY_Controller
         parent::__construct();
         $this->load->model('General_model');
         setlocale(LC_ALL, 'fr_FR');
+        $this->load->library('statistique');
     }
 
     /**
@@ -23,6 +23,8 @@ class Accueil extends MY_Controller
      */
     public function index()
     {
+        //chargement des donnés stats
+        $this->statistique->getVisite();
         $this->layout->setTitre('UPRAD : Union populaire République Algérienne Démocratique');
         $data['actus'] = $this->General_model->Touslesactualites(null, 1, 5, 1);
         $data['temoignages'] = $this->General_model->AfficherDesDonnes($this->tableTemoignage);
@@ -32,9 +34,23 @@ class Accueil extends MY_Controller
         $this->layout->view('accueil/accueil', $data);
     }
 
+    /**
+     * Cette méthode traire l'affichage des actualités
+     *
+     * @return void
+     */
+    public function getActualites()
+    {
+        $data['title'] = 'Actaulités UPRAD';
+        $data['stations'] = $this->General_model->Touslesstations();
+        $data['actus'] = $this->General_model->Touslesactualites(null, 1, null, 1);
+        $this->layout->view('accueil/actualites', $data);
+    }
+
     public function apropos()
     {
-        $this->layout->view('accueil/apropos');
+        $data['title'] = 'Mouvement UPRAD';
+        $this->layout->view('accueil/apropos', $data);
     }
 
     public function getEvenement()

@@ -195,7 +195,7 @@
             <div class="col-lg-12">
                 <div class="mainheadline">
                     <h2>Actualités</h2>
-                    <h3>Read more about our latest events, campaign and activity.
+                    <h3>Toutes l'actualité interne et externe de l'uprad.
                     </h3>
                 </div>
             </div>
@@ -205,8 +205,8 @@
 <div class="divider-space"></div>
 <div class="divider-space"></div>
 <!--blog news-->
-<div class="container">
-    <div class="row">
+<div class="container actu">
+    <div class="row ">
         <?php if (!empty($actus)) {
             foreach ($actus as $key => $actu) {
                 if ($key == 0) { ?>
@@ -227,9 +227,13 @@
                         </div>
                     </div>
 
-                <?php } elseif ($key != 0) { ?>
-                    <!-- affichage du reste des actus -->
-                    <div class="col-md-6 col-xs-12">
+                <?php }
+        } ?>
+            <div class="col-md-6 col-xs-12">
+                <?php foreach ($actus as $key => $actu) {
+                    if ($key != 0) { ?>
+                        <!-- affichage du reste des actus -->
+
                         <div class="thumbnail-news">
                             <div class="news-img pull-left">
                                 <div class="news-date">
@@ -246,14 +250,17 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                    </div>
-                <?php  }
-        }
-    } ?>
-        <div class="thumbnail-news">
-            <a class="button1 firstcolor small whiteborder" href="#" style="background-color: #ab0617!important; margin-top:30px;">Voir toutes les articles</a>
-            <div class="clearfix"></div>
-        </div>
+
+                    <?php  }
+            } ?>
+                <div class="thumbnail-news">
+                    <a class="button1 firstcolor small whiteborder" href="<?php echo site_url('actualites'); ?>" style="background-color: #ab0617!important; margin-top:30px;">Voir toutes les articles</a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        <?php  } ?>
+
+
     </div>
 </div>
 <!--blog news end-->
@@ -708,56 +715,35 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "prevNextButtons": false,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "wrapAround": false
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }'>
-                <!-- one testimonial -->
-                <div class="col-md-12 testimonials">
-                    <div class="testimonialsinner">
-                        <div class="testimonial">
-                            <img alt="" src="images/team1.jpg">
-                            <i class="fa fa-quote-left"></i>
-                            <h4>
-                                Suas iracundia his ea errem ridens nam an veniam equidem lorem. Suas iracundia his ea errem ridens
-                                nam an veniam equidem lorem.
-                            </h4>
-                            <h6>
-                                John Doe, NYC
-                            </h6>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- one testimonial end -->
                 <!-- one testimonial -->
-                <div class="col-md-12 testimonials">
-                    <div class="testimonialsinner">
-                        <div class="testimonial">
-                            <img alt="" src="images/team2.jpg">
-                            <i class="fa fa-quote-left"></i>
-                            <h4>
-                                Suas iracundia his ea errem ridens nam an veniam equidem lorem. Suas iracundia his ea errem ridens
-                                nam an veniam equidem lorem.
-                            </h4>
-                            <h6>
-                                Jane Doe, NYC
-                            </h6>
+                <?php if (!empty($temoignages)) {
+                    foreach ($temoignages as $val) { ?>
+                        <div class="col-md-12 testimonials">
+                            <div class="testimonialsinner">
+                                <div class="testimonial">
+                                    <?php if (!empty($val->photo)) { ?>
+                                        <img alt="" src="<?php echo base_url(); ?>assets/photos/<?php echo $val->photo; ?>">
+                                    <?php } else { ?>
+                                        <img alt="" src="<?php echo base_url(); ?>assets/images/trombi_3.png">
+                                    <?php } ?>
+
+                                    <i class="fa fa-quote-left"></i>
+                                    <h4>
+                                        <?php echo $val->contenu; ?>
+                                    </h4>
+                                    <h6>
+                                        <?php echo $val->nom . ' ' . $val->prenom . ',' . $val->fonction; ?>
+                                    </h6>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- one testimonial end -->
-                <!-- one testimonial -->
-                <div class="col-md-12 testimonials">
-                    <div class="testimonialsinner">
-                        <div class="testimonial">
-                            <img alt="" src="images/team1.jpg">
-                            <i class="fa fa-quote-left"></i>
-                            <h4>
-                                Suas iracundia his ea errem ridens nam an veniam equidem lorem. Suas iracundia his ea errem ridens
-                                nam an veniam equidem lorem.
-                            </h4>
-                            <h6>
-                                John Doe, NYC
-                            </h6>
-                        </div>
-                    </div>
-                </div>
+                    <?php    }
+            } ?>
+
+
+
                 <!-- one testimonial end -->
             </div>
             <!-- carousel end -->

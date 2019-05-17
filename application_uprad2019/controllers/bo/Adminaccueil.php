@@ -8,6 +8,8 @@ class Adminaccueil extends MY_Controller
     private $tableSalon = 'salonidee';
     private $tableEvent = 'evenement';
     private $tableStation = 'station';
+    private $tableTemoignage = 'temoignage';
+    private $tableGalerie = 'galerie';
 
     public function __construct()
     {
@@ -94,9 +96,6 @@ class Adminaccueil extends MY_Controller
             redirect('admin-uprad/categorie');
         }
     }
-
-
-
 
 
     /**
@@ -504,9 +503,231 @@ class Adminaccueil extends MY_Controller
         $this->layout->view('bo/accueil/ajout-evenement', $data);
     }
 
+    /**
+     * cette méthode traite les témoignage
+     */
+    public function getTemoignage()
+    {
+        $data['title'] = 'Témoignages';
+        $data['tems'] = $this->General_model->AfficherDesDonnes($this->tableTemoignage);
+        $this->layout->view('bo/accueil/temoignage', $data);
+    }
 
+    /**
+     * cette méthode traite l'ajout des témoignage en base
+     */
+    public function addTemoignage()
+    {
+        $data['title'] = 'Ajouter un témoignage';
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('contenu', 'contenu', 'trim|required');
+            $this->form_validation->set_rules('prenom', 'prenom', 'trim|required');
+            $this->form_validation->set_rules('nom', 'nom', 'trim|required');
+            if ($this->form_validation->run() == true) {
+                //traitement de la photo
+                $filename = "";
+                if ($_FILES['fichier']['name']) {
+                    $config['upload_path'] = './assets/photos/';
+                    $config['allowed_types'] = 'gif|jpg|jpeg|png|svg';
+                    $config['max_size'] = 2024 * 2;
+                    $config['encrypt_name'] = true;
+                    $config['file_name'] = $_FILES['fichier']['name'];
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if (!$this->upload->do_upload("fichier")) {
+                        $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
+                    } else {
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                    }
+                }
+                $dataInsert = array(
+                    'contenu' => $this->input->post('contenu'),
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
+                    'fonction' => $this->input->post('fonction'),
+                    'photo' => $filename
+                );
+                $this->General_model->AjoutDonnesEnBase($dataInsert, $this->tableTemoignage);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/temoignage');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-temoignage', $data);
+    }
 
+    /**
+     * cette méthode supprime un témoignage
+     * @param integer $_idTem
+     */
+    public function deleteTemoignage($_idTem = null)
+    {
+        if (!empty($_idTem) && is_numeric($_idTem)) {
+            $this->General_model->SupprimerLesDonnes($_idTem, $this->tableTemoignage);
+            $this->session->set_flashdata('success', SUPPRESSION);
+            redirect('admin-uprad/temoignage');
+        }
+    }
 
+    /**
+     * cette méthode traite la modification d'un témoignage
+     * @param integer $_idTem
+     */
+    public function updateTemoignage($_idTem = null)
+    {
+        $data['title'] = 'Modifier un témoignage';
+        if (!empty($_idTem) && is_numeric($_idTem)) {
+            $data['editer'] = $this->General_model->AfficherUneDonnes($_idTem, $this->tableTemoignage);
+        }
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('contenu', 'contenu', 'trim|required');
+            $this->form_validation->set_rules('prenom', 'prenom', 'trim|required');
+            $this->form_validation->set_rules('nom', 'nom', 'trim|required');
+            if ($this->form_validation->run() == true) {
+                //traitement de la photo
+                $filename = "";
+                if ($_FILES['fichier']['name']) {
+                    $config['upload_path'] = './assets/photos/';
+                    $config['allowed_types'] = 'gif|jpg|jpeg|png|svg';
+                    $config['max_size'] = 2024 * 2;
+                    $config['encrypt_name'] = true;
+                    $config['file_name'] = $_FILES['fichier']['name'];
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if (!$this->upload->do_upload("fichier")) {
+                        $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
+                    } else {
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                    }
+                }
+                $dataUpdate = array(
+                    'contenu' => $this->input->post('contenu'),
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
+                    'fonction' => $this->input->post('fonction')
+                );
+                if (!empty($filename)) {
+                    $dataUpdate['photo'] = $filename;
+                }
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableTemoignage);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/temoignage');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-temoignage', $data);
+    }
+
+    /****************Gestion de galerie************************** */
+
+    /**
+     * cette méthode traite l'affchage des images de la galerie
+     */
+    public function getGalerie()
+    {
+        $data['title'] = 'Galerie de campage';
+        $data['galeries'] = $this->General_model->AfficherDesDonnes($this->tableGalerie);
+        $this->layout->view('bo/accueil/galerie', $data);
+    }
+
+    /**
+     * cette méthode traite l'ajout d'une image en galerie
+     */
+    public function addGalerie()
+    {
+        $data['title'] = 'Ajout d\'une image';
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('titre', 'titre', 'trim|required');
+            if ($this->form_validation->run() == true) {
+                //traitement de la photo
+                $filename = "";
+                if ($_FILES['fichier']['name']) {
+                    $config['upload_path'] = './assets/img/';
+                    $config['allowed_types'] = 'gif|jpg|jpeg|png|svg';
+                    $config['max_size'] = 2024 * 2;
+                    $config['encrypt_name'] = true;
+                    $config['file_name'] = $_FILES['fichier']['name'];
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if (!$this->upload->do_upload("fichier")) {
+                        $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
+                    } else {
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                    }
+                }
+                $dataInsert = array(
+                    'titre' => $this->input->post('titre'),
+                    'categorie' => $this->input->post('categorie'),
+                    'image' => $filename
+                );
+                $this->General_model->AjoutDonnesEnBase($dataInsert, $this->tableGalerie);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/galerie');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-galerie', $data);
+    }
+
+    /**
+     * cette méthode traite la modification d'une image pour la galerie
+     * @param integer $_idGalerie
+     */
+    public function updateGalerie($_idGalerie = null)
+    {
+        $data['title'] = 'Modifier les infos de la galerie';
+        if (!empty($_idGalerie) && is_numeric($_idGalerie)) {
+            $data['editer'] = $this->General_model->AfficherUneDonnes($_idGalerie, $this->tableGalerie);
+        }
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('titre', 'titre', 'trim|required');
+            if ($this->form_validation->run() == true) {
+                //traitement de la photo
+                $filename = "";
+                if ($_FILES['fichier']['name']) {
+                    $config['upload_path'] = './assets/img/';
+                    $config['allowed_types'] = 'gif|jpg|jpeg|png|svg';
+                    $config['max_size'] = 2024 * 2;
+                    $config['encrypt_name'] = true;
+                    $config['file_name'] = $_FILES['fichier']['name'];
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if (!$this->upload->do_upload("fichier")) {
+                        $data['uploadError'] = array('error' => $this->upload->display_errors(), 'file' => 'Fichier chargement');
+                    } else {
+                        $upload_data = $this->upload->data();
+                        $filename = $upload_data['file_name'];
+                    }
+                }
+                $dataUpdate = array(
+                    'titre' => $this->input->post('titre'),
+                    'categorie' => $this->input->post('categorie')
+                );
+                if (!empty($filename)) {
+                    $dataUpdate['image'] = $filename;
+                }
+                $this->General_model->ModifierDonnesEnBase($this->input->post('id'), $dataUpdate, $this->tableGalerie);
+                $this->session->set_flashdata('success', ENREGISTREMENT);
+                redirect('admin-uprad/galerie');
+            }
+        }
+        $this->layout->view('bo/accueil/ajout-galerie', $data);
+    }
+
+    /**
+     * cette méthode supprime une galerie
+     * @param integer $_idGalerie
+     */
+    public function deleteGalerie($_idGalerie = null)
+    {
+        if (!empty($_idGalerie) && is_numeric($_idGalerie)) {
+            $this->General_model->SupprimerLesDonnes($_idGalerie, $this->tableGalerie);
+            $this->session->set_flashdata('success', SUPPRESSION);
+            redirect('admin-uprad/galerie');
+        }
+    }
+
+    /********************************Fonction globale***************************** */
 
     /**
      * cette méthode privée traite la taille des images 
